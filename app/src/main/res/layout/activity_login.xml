@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity"
+    style="@style/groupStylegray_900">
+
+            <LinearLayout
+                android:layout_marginStart="@dimen/_30pxh"
+                android:layout_marginEnd="@dimen/_30pxh"
+                android:gravity="center_horizontal"
+                android:id="@+id/layout_login"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_marginTop="@dimen/_50pxh"
+                    android:layout_marginStart="@dimen/_30pxh"
+                    android:layout_marginEnd="@dimen/_30pxh"
+                    android:layout_marginBottom="@dimen/_20pxh"
+                    android:id="@+id/login_logo"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/logo_app"
+                    android:contentDescription="@string/login_logo" />
+
+                <TextView
+                    android:ellipsize="end"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_30pxv"
+                    android:layout_width="wrap_content"
+                    android:singleLine="true"
+                    android:text="@string/lbl_sign_in"
+                    style="@style/txtMontserratbold20_2" />
+
+                <TextView
+                    android:textAlignment="center"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20pxv"
+                    android:layout_width="match_parent"
+                    android:text="@string/msg_enter_your_emai"
+                    style="@style/txtMontserratbold16"/>
+
+                <!-- Email -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="@dimen/_40pxv">
+                    <TextView
+                        android:ellipsize="end"
+                        android:layout_gravity="start"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:singleLine="true"
+                        android:text="@string/lbl_email"
+                        style="@style/txtMontserratbold20_2" />
+
+                    <EditText
+                        android:labelFor="@id/txtEmailLogin"
+                        android:id="@+id/txtEmailLogin"
+                        style="@style/txtSolidRoundedOutline_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="@dimen/_20pxv"
+                        android:paddingStart="@dimen/_25pxh"
+                        android:paddingTop="@dimen/_16pxv"
+                        android:paddingEnd="@dimen/_25pxh"
+                        android:paddingBottom="@dimen/_15pxv"
+                        android:autofillHints="Email..."
+                        android:inputType="textEmailAddress"/>
+                </LinearLayout>
+
+                <!-- Password -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="@dimen/_40pxv">
+                    <TextView
+                        android:ellipsize="end"
+                        android:layout_gravity="start"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:singleLine="true"
+                        android:text="@string/lbl_password"
+                        style="@style/txtMontserratbold20_2" />
+
+                    <EditText
+                        android:labelFor="@id/txtPasswordLogin"
+                        android:id="@+id/txtPasswordLogin"
+                        style="@style/txtSolidRoundedOutline_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="@dimen/_20pxv"
+                        android:paddingStart="@dimen/_25pxh"
+                        android:paddingTop="@dimen/_16pxv"
+                        android:paddingEnd="@dimen/_25pxh"
+                        android:paddingBottom="@dimen/_15pxv"
+                        android:autofillHints="Password..."
+                        android:inputType="textPassword"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_gravity="center"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_60pxv"
+                    android:layout_marginBottom="@dimen/_60pxh"
+                    android:layout_width="@dimen/_250pxh"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnSignIn"
+                        android:layout_height="match_parent"
+                        android:layout_width="match_parent"
+                        android:padding="@dimen/_10pxh"
+                        android:singleLine="true"
+                        android:text="@string/lbl_sign_in"
+                        android:textAllCaps="false"
+                        style="@style/btnSolidRounded" />
+                </LinearLayout>
+
+            </LinearLayout>
+</LinearLayout>

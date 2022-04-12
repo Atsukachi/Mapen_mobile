@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SKPFragment"
+    android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:id="@+id/header"
+                android:gravity="center"
+                android:layout_height="@dimen/_70pxv"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                style="@style/groupStylewhite_A700">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="bottom|center_vertical"
+                    android:layout_marginTop="@dimen/_16pxh">
+
+                    <TextView
+                        android:id="@+id/navbar_skp"
+                        android:gravity="end|center"
+                        style="@style/txtMontserratbold20"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="@dimen/_30pxh"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:text="@string/lbl_skp" />
+                </RelativeLayout>
+            </LinearLayout>
+        </FrameLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_skp"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            style="@style/groupStylewhite_A700">
+
+            <ScrollView
+                android:clipToPadding="false"
+                android:fillViewport="true"
+                android:id="@+id/sv_editprofil"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_width="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_marginStart="@dimen/_30pxh"
+                    android:layout_marginEnd="@dimen/_30pxh">
+
+                    <!-- Pengajuan SKP -->
+                    <LinearLayout
+                        android:gravity="center"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:padding="@dimen/_15pxh"
+                        android:layout_marginBottom="@dimen/_30pxh"
+                        android:layout_width="match_parent"
+                        android:orientation="horizontal"
+                        style="@style/groupStylegreen_400cornerRadius_2">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center">
+                            <ImageView
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_width="wrap_content"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/img_foldersolid"
+                                android:contentDescription="@string/icon_pengajuanskp" />
+
+                            <TextView
+                                android:ellipsize="end"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_20pxh"
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:singleLine="true"
+                                style="@style/txtMontserratbold20_2"
+                                android:text="@string/lbl_pengajuan_skp"/>
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <!-- Tabel SKP -->
+                    <LinearLayout
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:padding="@dimen/_15pxh"
+                        android:layout_marginBottom="@dimen/_30pxh"
+                        android:layout_width="match_parent"
+                        android:orientation="horizontal"
+                        style="@style/groupStylegreen_400cornerRadius_2">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center">
+                            <ImageView
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_width="wrap_content"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/img_tablesolid"
+                                android:contentDescription="@string/icon_tabelskp" />
+
+                            <TextView
+                                android:ellipsize="end"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_20pxh"
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:singleLine="true"
+                                style="@style/txtMontserratbold20_2"
+                                android:text="@string/lbl_tabel_skp"/>
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+
+            </ScrollView>
+        </LinearLayout>
+</LinearLayout>

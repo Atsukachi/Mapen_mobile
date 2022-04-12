@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    tools:context=".EditProfil">
+
+    <FrameLayout
+        android:id="@+id/fl_editprofil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <!-- Top Navbar -->
+        <LinearLayout
+            android:gravity="center"
+            android:layout_gravity="bottom"
+            android:layout_height="@dimen/_70pxv"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            style="@style/groupStylewhite_A700">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="bottom|center_vertical"
+                android:layout_marginTop="@dimen/_16pxh">
+
+                <ImageView
+                    android:id="@+id/arrow_back"
+                    android:layout_width="10dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="@dimen/_30pxh"
+                    android:scaleType="fitXY"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/img_angleleftsoli"
+                    android:contentDescription="@string/arrowback" />
+
+                <TextView
+                    android:id="@+id/txtChangePassword"
+                    style="@style/txtMontserratbold20"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/_60pxh"
+                    android:layout_marginEnd="@dimen/_30pxh"
+                    android:ellipsize="end"
+                    android:gravity="end|center"
+                    android:singleLine="true"
+                    android:text="@string/lbl_edit_profil" />
+            </RelativeLayout>
+        </LinearLayout>
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_editprofil"
+        android:gravity="start"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        style="@style/groupStylewhite_A700">
+
+        <ScrollView
+            android:clipToPadding="false"
+            android:fillViewport="true"
+            android:id="@+id/sv_editprofil"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_width="match_parent">
+
+            <LinearLayout
+                android:gravity="start"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:paddingTop="@dimen/_30pxh">
+
+                <!-- Foto -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center">
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/user_image"
+                        android:layout_width="@dimen/_125pxh"
+                        android:layout_height="@dimen/_125pxh"
+                        android:src="@drawable/user_image"/>
+                    <TextView
+                        android:paddingTop="@dimen/_10pxh"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/change_image"
+                        style="@style/txtMontserratbold16_3"/>
+                </LinearLayout>
+
+                <!-- Nama -->
+                <LinearLayout
+                    android:gravity="start"
+                    android:layout_marginTop="@dimen/_30pxv"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:orientation="vertical">
+                    <TextView
+                        style="@style/txtMontserratbold20_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_30pxh"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:text="@string/lbl_nama" />
+                    <TextView
+                        android:id="@+id/txtNamaEditProfil"
+                        style="@style/txtSolidRoundedOutline"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_30pxh"
+                        android:layout_marginTop="@dimen/_20pxv"
+                        android:layout_marginEnd="@dimen/_30pxh"
+                        android:paddingStart="@dimen/_25pxh"
+                        android:paddingTop="@dimen/_16pxv"
+                        android:paddingEnd="@dimen/_25pxh"
+                        android:paddingBottom="@dimen/_15pxv"
+                        android:text="@string/lbl_didan_hatama2"/>
+                </LinearLayout>
+
+                <!-- Email -->
+                <LinearLayout
+                    android:gravity="start"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_30pxv"
+                    android:layout_width="match_parent"
+                    android:orientation="vertical">
+                    <TextView
+                        style="@style/txtMontserratbold20_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_30pxh"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:text="@string/lbl_email" />
+                    <EditText
+                        android:id="@+id/txtEmailEditProfil"
+                        style="@style/txtSolidRoundedOutline_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_30pxh"
+                        android:layout_marginTop="@dimen/_20pxv"
+                        android:layout_marginEnd="@dimen/_30pxh"
+                        android:paddingStart="@dimen/_25pxh"
+                        android:paddingTop="@dimen/_16pxv"
+                        android:paddingEnd="@dimen/_25pxh"
+                        android:paddingBottom="@dimen/_15pxv"
+                        android:text="@string/msg_didan_hafizpp16"/>
+                </LinearLayout>
+
+                <!-- Alamat -->
+                <LinearLayout
+                    android:gravity="start"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_30pxv"
+                    android:layout_width="match_parent"
+                    android:orientation="vertical">
+                    <TextView
+                        style="@style/txtMontserratbold20_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_30pxh"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:text="@string/lbl_alamat" />
+                    <LinearLayout
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_30pxh"
+                        android:layout_marginStart="@dimen/_30pxh"
+                        android:layout_marginTop="@dimen/_20pxv"
+                        android:layout_width="match_parent"
+                        android:orientation="vertical">
+                        <EditText
+                            android:id="@+id/txtAlamatEditProfil"
+                            android:gravity="top|start"
+                            android:inputType="text|textMultiLine"
+                            style="@style/txtSolidRoundedOutline_1"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_100pxh"
+                            android:paddingStart="@dimen/_25pxh"
+                            android:paddingEnd="@dimen/_25pxh"
+                            android:paddingTop="@dimen/_16pxv"
+                            android:paddingBottom="@dimen/_15pxv"
+                            android:text="@string/msg_jalan_badak_iv"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Telepon -->
+                <LinearLayout
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_30pxv"
+                    android:layout_width="match_parent"
+                    android:orientation="vertical">
+                    <TextView
+                        style="@style/txtMontserratbold20_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_30pxh"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:text="@string/lbl_telepon" />
+
+                    <LinearLayout
+                        android:gravity="center_vertical"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_20pxv"
+                        android:layout_marginStart="@dimen/_30pxh"
+                        android:layout_marginEnd="@dimen/_30pxh"
+                        android:layout_width="match_parent"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:layout_width="wrap_content"
+                            style="@style/txtMontserratbold20_1"
+                            android:text="@string/lbl_62"/>
+                        <EditText
+                            android:id="@+id/txtTeleponEditProfil"
+                            android:textAlignment="center"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="@dimen/_20pxh"
+                            android:layout_weight="0.84"
+                            android:layout_width="0dp"
+                            android:paddingBottom="@dimen/_7pxv"
+                            android:paddingStart="@dimen/_25pxh"
+                            android:paddingEnd="@dimen/_25pxh"
+                            android:paddingTop="@dimen/_7pxv"
+                            android:singleLine="true"
+                            style="@style/txtSolidRoundedOutline_1"
+                            android:text="@string/lbl_81319263062"
+                            android:maxLength="12"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Keahlian -->
+                <LinearLayout
+                    android:gravity="start"
+                    android:id="@+id/linearGroup261"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_30pxv"
+                    android:layout_width="match_parent"
+                    android:orientation="vertical">
+                    <TextView
+                        style="@style/txtMontserratbold20_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_30pxh"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:text="@string/lbl_keahlian" />
+                    <TextView
+                        android:id="@+id/txtKeahlianEditProfil"
+                        style="@style/txtSolidRoundedOutline_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_30pxh"
+                        android:layout_marginTop="@dimen/_20pxv"
+                        android:layout_marginEnd="@dimen/_30pxh"
+                        android:paddingStart="@dimen/_25pxh"
+                        android:paddingTop="@dimen/_16pxv"
+                        android:paddingEnd="@dimen/_25pxh"
+                        android:paddingBottom="@dimen/_15pxv"
+                        android:text="@string/lbl_cv_mapen_pdf"/>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginStart="@dimen/_30pxh"
+                        android:layout_marginTop="@dimen/_20pxh">
+                        <!-- Upload -->
+                        <TextView
+                            android:id="@+id/txtUploadKeahlian"
+                            android:layout_marginBottom="@dimen/_20pxh"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:paddingStart="@dimen/_20pxh"
+                            android:paddingEnd="@dimen/_20pxh"
+                            android:padding="@dimen/_10pxh"
+                            android:layout_gravity="start"
+                            android:text="@string/lbl_upload_keahlian"
+                            android:drawablePadding="@dimen/_20pxh"
+                            style="@style/groupStyleteal_400cornerRadius"
+                            app:drawableStartCompat="@drawable/img_uploadsolid_1" />
+
+                        <!-- Download -->
+                        <TextView
+                            android:id="@+id/txtDownloadFile"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:paddingStart="@dimen/_20pxh"
+                            android:paddingEnd="@dimen/_20pxh"
+                            android:padding="@dimen/_10pxh"
+                            android:layout_gravity="start"
+                            android:text="@string/lbl_download_file"
+                            android:drawablePadding="@dimen/_20pxh"
+                            style="@style/groupStyleteal_400cornerRadius"
+                            app:drawableStartCompat="@drawable/img_downloadsolid" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!-- Button Submit -->
+                <LinearLayout
+                    android:gravity="start"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_60pxv"
+                    android:layout_marginBottom="@dimen/_30pxv"
+                    android:layout_marginStart="@dimen/_30pxh"
+                    android:layout_marginEnd="@dimen/_30pxh"
+                    android:layout_width="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/btn_save_editprofil"
+                        style="@style/groupStyleorange_500cornerRadius"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/_10pxh"
+                        android:layout_gravity="center"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/imageFloppydisksol"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_20pxh"
+                            android:contentDescription="@string/icon_save"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/img_floppydisksol" />
+
+                        <TextView
+                            android:id="@+id/txtSimpan"
+                            style="@style/txtMontserratbold20_1"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_25pxh"
+                            android:layout_marginEnd="@dimen/_20pxh"
+                            android:layout_weight="1"
+                            android:ellipsize="end"
+                            android:singleLine="true"
+                            android:text="@string/lbl_simpan"
+                            android:layout_width="0dp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+</LinearLayout>

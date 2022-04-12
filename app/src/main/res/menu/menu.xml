@@ -1,0 +1,29 @@
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <item
+        android:id="@+id/menu_skp"
+        android:enabled="true"
+        android:icon="@drawable/img_foldersolid"
+        android:title="@string/lbl_skp"
+        android:visible="true"/>
+    <item
+        android:id="@+id/menu_presensi"
+        android:enabled="true"
+        android:icon="@drawable/img_calendardayso"
+        android:title="@string/lbl_presensi"
+        android:visible="true"/>
+    <item
+        android:id="@+id/menu_logkegiatan"
+        android:enabled="true"
+        android:icon="@drawable/img_clipboardlist"
+        android:title="@string/lbl_kegiatan"
+        android:visible="true"/>
+    <item
+        android:id="@+id/menu_profil"
+        android:enabled="true"
+        android:icon="@drawable/img_userpensolid"
+        android:title="@string/lbl_profil"
+        android:visible="true"/>
+</menu>

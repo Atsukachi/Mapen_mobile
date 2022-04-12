@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:layout_marginStart="@dimen/_20pxh">
+
+    <LinearLayout
+        android:gravity="start"
+        android:id="@+id/linearT1"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginEnd="@dimen/_15pxh">
+
+        <TextView
+            android:ellipsize="end"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:singleLine="true"
+            style="@style/txtMontserratbold20"
+            android:text="@string/lbl_nama"/>
+
+        <TextView
+            android:ellipsize="end"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_45pxv"
+            android:layout_width="match_parent"
+            android:singleLine="true"
+            style="@style/txtMontserratbold20"
+            android:text="@string/lbl_email"/>
+
+        <TextView
+            android:ellipsize="end"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_45pxv"
+            android:layout_width="match_parent"
+            android:singleLine="true"
+            style="@style/txtMontserratbold20"
+            android:text="@string/lbl_alamat"/>
+
+        <TextView
+            android:ellipsize="end"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_45pxv"
+            android:layout_width="match_parent"
+            android:singleLine="true"
+            style="@style/txtMontserratbold20"
+            android:text="@string/lbl_telepon"/>
+
+        <TextView
+            android:ellipsize="end"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_45pxv"
+            android:layout_width="match_parent"
+            android:singleLine="true"
+            style="@style/txtMontserratbold20"
+            android:text="@string/lbl_keahlian"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:gravity="start"
+        android:id="@+id/linearT2"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginEnd="@dimen/_15pxh">
+
+        <TextView
+            android:ellipsize="end"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:singleLine="true"
+            style="@style/txtMontserratbold20"
+            android:text="@string/lbl"/>
+
+        <TextView
+            android:ellipsize="end"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_45pxv"
+            android:layout_width="match_parent"
+            android:singleLine="true"
+            style="@style/txtMontserratbold20"
+            android:text="@string/lbl"/>
+
+        <TextView
+            android:ellipsize="end"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_45pxv"
+            android:layout_width="match_parent"
+            android:singleLine="true"
+            style="@style/txtMontserratbold20"
+            android:text="@string/lbl"/>
+
+        <TextView
+            android:ellipsize="end"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_45pxv"
+            android:layout_width="match_parent"
+            android:singleLine="true"
+            style="@style/txtMontserratbold20"
+            android:text="@string/lbl"/>
+
+        <TextView
+            android:ellipsize="end"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_45pxv"
+            android:layout_width="match_parent"
+            android:singleLine="true"
+            style="@style/txtMontserratbold20"
+            android:text="@string/lbl"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:gravity="start"
+        android:id="@+id/linearT3"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginEnd="@dimen/_15pxh">
+
+        <TextView
+            android:ellipsize="end"
+            android:id="@+id/txtNama"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:singleLine="true"
+            style="@style/txtMontserratbold20"
+            android:text="@string/lbl_nama"/>
+
+        <TextView
+            android:ellipsize="end"
+            android:id="@+id/txtEmail"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_45pxv"
+            android:layout_width="match_parent"
+            android:singleLine="true"
+            style="@style/txtMontserratbold20"
+            android:text="@string/lbl_email"/>
+
+        <TextView
+            android:ellipsize="end"
+            android:id="@+id/txtAlamat"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_45pxv"
+            android:layout_width="match_parent"
+            android:singleLine="true"
+            style="@style/txtMontserratbold20"
+            android:text="@string/lbl_alamat"/>
+
+        <TextView
+            android:ellipsize="end"
+            android:id="@+id/txtTelepon"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_45pxv"
+            android:layout_width="match_parent"
+            android:singleLine="true"
+            style="@style/txtMontserratbold20"
+            android:text="@string/lbl_telepon"/>
+
+        <TextView
+            android:ellipsize="end"
+            android:id="@+id/txtKeahlian"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_45pxv"
+            android:layout_width="match_parent"
+            android:singleLine="true"
+            style="@style/txtMontserratbold20"
+            android:text="@string/lbl_unggah_dokumen"/>
+    </LinearLayout>
+
+</LinearLayout>

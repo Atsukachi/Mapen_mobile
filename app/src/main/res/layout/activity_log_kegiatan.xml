@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    tools:context=".LogKegiatan">
+
+    <include
+        layout="@layout/toolbar"/>
+
+<!--    &lt;!&ndash; Header &ndash;&gt;-->
+<!--    <LinearLayout-->
+<!--        style="@style/groupStylecyan_300cornerRadius"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_gravity="top|start"-->
+<!--        android:orientation="vertical">-->
+
+<!--        <androidx.appcompat.widget.Toolbar-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="@dimen/_30pxv"-->
+<!--            android:layout_marginBottom="@dimen/_35pxv">-->
+
+<!--            <RelativeLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_marginStart="@dimen/_30pxh"-->
+<!--                android:layout_marginEnd="@dimen/_30pxh"-->
+<!--                android:orientation="horizontal"-->
+<!--                android:baselineAligned="false">-->
+
+<!--                <ImageView-->
+<!--                    android:id="@+id/user_image"-->
+<!--                    android:layout_width="@dimen/_75pxh"-->
+<!--                    android:layout_height="@dimen/_75pxh"-->
+<!--                    android:scaleType="fitXY"-->
+<!--                    android:src="@drawable/user_image"-->
+<!--                    android:layout_centerVertical="true"-->
+<!--                    android:contentDescription="@string/userimage" />-->
+
+<!--                <LinearLayout-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_centerVertical="true"-->
+<!--                    android:layout_marginStart="@dimen/_35pxv"-->
+<!--                    android:layout_marginEnd="@dimen/_35pxh"-->
+<!--                    android:layout_toEndOf="@+id/user_image"-->
+<!--                    android:orientation="vertical">-->
+
+<!--                    <TextView-->
+<!--                        android:ems="@integer/material_motion_duration_short_1"-->
+<!--                        style="@style/txtMontserratbold20_2"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:ellipsize="end"-->
+<!--                        android:singleLine="true"-->
+<!--                        android:text="@string/lbl_selamat_datang"/>-->
+
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        android:orientation="horizontal"-->
+<!--                        android:ems="@integer/material_motion_duration_short_1">-->
+<!--                        <TextView-->
+<!--                            android:id="@+id/txtNavbarNama"-->
+<!--                            style="@style/txtMontserratbold20_2"-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="match_parent"-->
+<!--                            android:layout_marginTop="@dimen/_5pxv"-->
+<!--                            android:ellipsize="end"-->
+<!--                            android:singleLine="true"-->
+<!--                            android:text="@string/lbl_didan_hatama" />-->
+<!--                        <TextView-->
+<!--                            style="@style/txtMontserratbold20_2"-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="match_parent"-->
+<!--                            android:layout_marginTop="@dimen/_5pxv"-->
+<!--                            android:layout_marginStart="@dimen/_5pxh"-->
+<!--                            android:ellipsize="end"-->
+<!--                            android:singleLine="true"-->
+<!--                            android:text="@string/exclamation" />-->
+<!--                    </LinearLayout>-->
+<!--                </LinearLayout>-->
+
+<!--                <LinearLayout-->
+<!--                    android:id="@+id/btn_back"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_alignParentEnd="true"-->
+<!--                    android:layout_centerVertical="true"-->
+<!--                    android:layout_centerInParent="true">-->
+<!--                    <ImageView-->
+<!--                        android:layout_weight="1"-->
+<!--                        android:layout_gravity="center"-->
+<!--                        android:layout_width="0dp"-->
+<!--                        android:layout_height="@dimen/_25pxh"-->
+<!--                        android:contentDescription="@string/logout"-->
+<!--                        android:scaleType="fitXY"-->
+<!--                        android:adjustViewBounds="true"-->
+<!--                        android:src="@drawable/logout" />-->
+<!--                </LinearLayout>-->
+
+<!--            </RelativeLayout>-->
+<!--        </androidx.appcompat.widget.Toolbar>-->
+<!--    </LinearLayout>-->
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <!-- Top Navbar -->
+        <LinearLayout
+            android:gravity="center"
+            android:layout_gravity="bottom"
+            android:layout_height="@dimen/_70pxv"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            style="@style/groupStylewhite_A700">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="bottom|center_vertical"
+                android:layout_marginTop="@dimen/_16pxh">
+
+                <ImageView
+                    android:id="@+id/arrow_back"
+                    android:layout_width="10dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="@dimen/_30pxh"
+                    android:scaleType="fitXY"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/img_angleleftsoli"
+                    android:contentDescription="@string/arrowback" />
+
+                <TextView
+                    android:id="@+id/txtChangePassword"
+                    style="@style/txtMontserratbold20"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/_60pxh"
+                    android:layout_marginEnd="@dimen/_30pxh"
+                    android:ellipsize="end"
+                    android:gravity="end|center"
+                    android:singleLine="true"
+                    android:text="@string/lbl_change_password" />
+            </RelativeLayout>
+        </LinearLayout>
+    </FrameLayout>
+
+    <LinearLayout
+        android:gravity="start"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        style="@style/groupStylewhite_A700">
+
+        <!-- Main Content -->
+        <ScrollView
+            android:clipToPadding="false"
+            android:fillViewport="true"
+            android:id="@+id/sv_changepass"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_width="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:orientation="vertical">
+
+                <!-- Current Password -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/txtMontserratbold20_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_30pxh"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:text="@string/msg_current_passwor" />
+
+                    <TextView
+                        style="@style/txtSolidRoundedOutline_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_30pxh"
+                        android:layout_marginTop="@dimen/_20pxv"
+                        android:layout_marginEnd="@dimen/_30pxh"
+                        android:paddingStart="@dimen/_25pxh"
+                        android:paddingTop="@dimen/_16pxv"
+                        android:paddingEnd="@dimen/_25pxh"
+                        android:paddingBottom="@dimen/_15pxv" />
+                </LinearLayout>
+
+                <!-- New Password -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_30pxv"
+                    android:gravity="start"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/txtMontserratbold20_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_30pxh"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:text="@string/lbl_new_password" />
+
+                    <TextView
+                        style="@style/txtSolidRoundedOutline_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_30pxh"
+                        android:layout_marginTop="@dimen/_20pxv"
+                        android:layout_marginEnd="@dimen/_30pxh"
+                        android:paddingStart="@dimen/_25pxh"
+                        android:paddingTop="@dimen/_16pxv"
+                        android:paddingEnd="@dimen/_25pxh"
+                        android:paddingBottom="@dimen/_15pxv" />
+                </LinearLayout>
+
+
+                <!-- Repeat New Password -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_30pxv"
+                    android:gravity="start"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/txtMontserratbold20_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_30pxh"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:text="@string/msg_repeat_new_pass" />
+
+                    <TextView
+                        style="@style/txtSolidRoundedOutline_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_30pxh"
+                        android:layout_marginTop="@dimen/_20pxv"
+                        android:layout_marginEnd="@dimen/_30pxh"
+                        android:paddingStart="@dimen/_25pxh"
+                        android:paddingTop="@dimen/_16pxv"
+                        android:paddingEnd="@dimen/_25pxh"
+                        android:paddingBottom="@dimen/_15pxv" />
+                </LinearLayout>
+
+                <!-- Button Submit -->
+                <LinearLayout
+                    style="@style/groupStyleorange_500cornerRadius"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_50pxh"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_30pxv"
+                    android:layout_marginBottom="@dimen/_30pxv"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imageFloppydisksol"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_30pxh"
+                        android:contentDescription="@string/icon_save"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/img_floppydisksol" />
+
+                    <TextView
+                        android:id="@+id/txtSimpan"
+                        style="@style/txtMontserratbold20_1"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_25pxh"
+                        android:layout_marginEnd="@dimen/_30pxh"
+                        android:layout_weight="1"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:text="@string/lbl_simpan"
+                        android:layout_width="0dp" />
+
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:paddingTop="@dimen/_5pxh"
+            app:labelVisibilityMode="unlabeled"
+            android:paddingBottom="@dimen/_5pxh"
+            app:menu="@menu/menu"
+            android:background="@color/cyan_300"
+            android:foreground="@drawable/menu_selected"
+            app:itemIconTint="@drawable/menu_selected"
+            app:elevation="@dimen/_10pxh"/>
+
+    </LinearLayout>
+</LinearLayout>

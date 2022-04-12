@@ -1,0 +1,24 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="mapen_style" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/cyan_300</item>
+        <item name="colorPrimaryDark">@color/darkblue_900</item>
+        <item name="colorAccent">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/darkblue_900</item>
+        <item name="colorSecondaryVariant">@color/cyan_300</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimary</item>
+    </style>
+
+        <!-- Customize your theme here. -->
+        <style name="mapen_splashscreen" parent="Theme.AppCompat.Light.NoActionBar">
+            <item name="android:windowBackground">@drawable/img_mapenlogo</item>
+        </style>
+        <style name="BottomNavigationTheme" parent="Theme.AppCompat.Light.NoActionBar">
+            <item name="colorPrimary">@color/darkblue_900</item>
+            <item name="android:textColorSecondary">@color/white</item>
+        </style>
+</resources>

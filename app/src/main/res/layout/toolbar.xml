@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <!-- Header -->
+    <LinearLayout
+        style="@style/groupStylecyan_300cornerRadius"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|start"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_30pxv"
+            android:layout_marginBottom="@dimen/_35pxv">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_30pxh"
+                android:layout_marginEnd="@dimen/_30pxh"
+                android:orientation="horizontal"
+                android:baselineAligned="false">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/user_image"
+                    android:layout_width="@dimen/_75pxh"
+                    android:layout_height="@dimen/_75pxh"
+                    android:src="@drawable/user_image"
+                    android:layout_centerVertical="true"
+                    android:contentDescription="@string/userimage" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/_35pxv"
+                    android:layout_marginEnd="@dimen/_35pxh"
+                    android:layout_toEndOf="@id/user_image"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:ems="@integer/material_motion_duration_short_1"
+                        style="@style/txtMontserratbold20_2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:text="@string/lbl_selamat_datang"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:ems="@integer/material_motion_duration_short_1">
+                        <TextView
+                            android:id="@+id/txtNavbarNama"
+                            style="@style/txtMontserratbold20_2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="@dimen/_5pxv"
+                            android:ellipsize="end"
+                            android:singleLine="true"
+                            android:text="@string/lbl_didan_hatama" />
+                        <TextView
+                            style="@style/txtMontserratbold20_2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="@dimen/_5pxv"
+                            android:layout_marginStart="@dimen/_5pxh"
+                            android:ellipsize="end"
+                            android:singleLine="true"
+                            android:text="@string/exclamation" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/btn_logout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_centerInParent="true">
+                    <ImageView
+                        android:layout_weight="1"
+                        android:layout_gravity="center"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_25pxh"
+                        android:contentDescription="@string/logout"
+                        android:scaleType="fitXY"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/logout" />
+                </LinearLayout>
+
+            </RelativeLayout>
+        </androidx.appcompat.widget.Toolbar>
+    </LinearLayout>
+</FrameLayout>
