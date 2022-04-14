@@ -34,6 +34,11 @@ public class ApiClient {
                 .build();
     }
 
+    public static MapenService getService_cp(){
+        MapenService service_cp = getRetrofit().create(MapenService.class);
+        return service_cp;
+    }
+
     public static synchronized ApiClient getInstance()
     {
         if(clientObject == null)
