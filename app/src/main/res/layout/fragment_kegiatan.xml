@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SKPFragment"
+    tools:context=".fragment.SKPFragment"
     android:orientation="vertical">
 
         <FrameLayout
@@ -104,7 +104,7 @@
 
                     <!-- Tabel Kegiatan -->
                     <LinearLayout
-                        android:id="@+id/btn_tabelkeg"
+                        android:id="@+id/btn_tabelkegiatan"
                         android:clickable="true"
                         android:focusable="true"
                         android:gravity="center"

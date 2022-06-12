@@ -1,150 +1,319 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SKPFragment"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragment.SKPFragment"
     android:orientation="vertical">
 
-        <FrameLayout
-            android:id="@+id/fl_profil"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-            <LinearLayout
-                android:id="@+id/header"
-                android:gravity="center"
-                android:layout_height="@dimen/_70pxv"
-                android:layout_width="match_parent"
-                android:orientation="horizontal"
-                style="@style/groupStylewhite_A700">
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="bottom|center_vertical"
-                    android:layout_marginTop="@dimen/_16pxh">
-
-                    <TextView
-                        android:id="@+id/navbar_profil"
-                        android:gravity="end|center"
-                        style="@style/txtMontserratbold20"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentEnd="true"
-                        android:layout_centerVertical="true"
-                        android:layout_marginEnd="@dimen/_30pxh"
-                        android:ellipsize="end"
-                        android:singleLine="true"
-                        android:text="@string/lbl_profil" />
-                </RelativeLayout>
-            </LinearLayout>
-        </FrameLayout>
+    <FrameLayout
+        android:id="@+id/fl_profil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
 
         <LinearLayout
-            android:id="@+id/layout_profil"
-            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_height="@dimen/_70pxv"
             android:layout_width="match_parent"
-            android:orientation="vertical"
+            android:orientation="horizontal"
             style="@style/groupStylewhite_A700">
 
-            <ScrollView
-                android:clipToPadding="false"
-                android:fillViewport="true"
-                android:id="@+id/sv_editprofil"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:layout_width="match_parent">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="bottom|center_vertical"
+                android:layout_marginTop="@dimen/_16pxh">
+
+                <TextView
+                    android:id="@+id/navbar_profil"
+                    android:gravity="end|center"
+                    style="@style/txtMontserratbold20"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="@dimen/_30pxh"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:text="@string/lbl_profil" />
+            </RelativeLayout>
+        </LinearLayout>
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_profil"
+        android:gravity="start"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        style="@style/groupStylewhite_A700">
+
+        <ScrollView
+            android:scrollbars="none"
+            android:clipToPadding="false"
+            android:fillViewport="true"
+            android:id="@+id/sv_profil"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_width="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
                 <LinearLayout
-                    android:layout_width="match_parent"
+                    android:gravity="start"
                     android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:padding="@dimen/_20pxh"
+                    android:layout_marginVertical="@dimen/_5pxh"
+                    android:layout_marginHorizontal="@dimen/_30pxh"
+                    style="@style/groupStylewhite_A700cornerRadius"
                     android:orientation="vertical"
-                    android:gravity="center"
-                    android:layout_marginStart="@dimen/_30pxh"
-                    android:layout_marginEnd="@dimen/_30pxh">
+                    android:elevation="@dimen/_10pxh">
 
-                    <!-- Edit Profi -->
-                    <LinearLayout
-                        android:clickable="true"
-                        android:id="@+id/btn_editprofil"
-                        android:gravity="center"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:padding="@dimen/_15pxh"
-                        android:layout_marginBottom="@dimen/_30pxh"
+                    <TableLayout
                         android:layout_width="match_parent"
-                        android:orientation="horizontal"
-                        style="@style/groupStylegreen_400cornerRadius_2"
-                        android:focusable="true">
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center">
-                            <ImageView
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:layout_width="wrap_content"
-                                android:scaleType="fitXY"
-                                android:src="@drawable/img_userpensolid"
-                                android:contentDescription="@string/icon_editprofil" />
-
-                            <TextView
-                                android:ellipsize="end"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="@dimen/_20pxh"
-                                android:layout_gravity="center"
-                                android:layout_weight="1"
-                                android:layout_width="0dp"
-                                android:singleLine="true"
-                                style="@style/txtMontserratbold20_2"
-                                android:text="@string/lbl_edit_profil"/>
-                        </LinearLayout>
-
-                    </LinearLayout>
-
-                    <!-- Change Password -->
-                    <LinearLayout
-                        android:id="@+id/btn_changepass"
-                        android:clickable="true"
-                        android:focusable="true"
-                        android:gravity="center"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:padding="@dimen/_15pxh"
-                        android:layout_marginBottom="@dimen/_30pxh"
-                        android:layout_width="match_parent"
-                        android:orientation="horizontal"
-                        style="@style/groupStylegreen_400cornerRadius_2">
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
+                        android:stretchColumns="1">
+                        <!-- Nama -->
+                        <TableRow
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="center">
-                            <ImageView
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:layout_width="wrap_content"
-                                android:scaleType="fitXY"
-                                android:src="@drawable/img_keysolid1"
-                                android:contentDescription="@string/icon_editpass" />
-
+                            android:orientation="horizontal">
                             <TextView
-                                android:ellipsize="end"
+                                android:gravity="center_vertical"
+                                android:layout_column="1"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginStart="@dimen/_20pxh"
-                                android:layout_gravity="center"
+                                android:text="@string/lbl_nama"
+                                style="@style/txtMontserratbold16_2"/>
+                            <TextView
+                                android:id="@+id/txtNamaProfil"
+                                android:layout_width="wrap_content"
                                 android:layout_weight="1"
-                                android:layout_width="0dp"
-                                android:singleLine="true"
-                                style="@style/txtMontserratbold20_2"
-                                android:text="@string/lbl_change_password"/>
-                        </LinearLayout>
+                                android:layout_height="wrap_content"
+                                style="@style/txtMontserratbold16_3"/>
+                        </TableRow>
 
+                        <!-- Email -->
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="@dimen/_20pxh">
+                            <TextView
+                                android:gravity="center_vertical"
+                                android:layout_column="1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/lbl_email"
+                                style="@style/txtMontserratbold16_2"/>
+                            <TextView
+                                android:id="@+id/txtEmailProfil"
+                                android:layout_width="wrap_content"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                style="@style/txtMontserratbold16_3"/>
+                        </TableRow>
+
+                        <!-- Alamat -->
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="@dimen/_20pxh">
+                            <TextView
+                                android:layout_column="1"
+                                android:gravity="center_vertical"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/lbl_alamat"
+                                style="@style/txtMontserratbold16_2"/>
+                            <TextView
+                                android:id="@+id/txtAlamatProfil"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="match_parent"
+                                style="@style/txtMontserratbold16_3"/>
+                        </TableRow>
+
+                        <!-- Telepon -->
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="@dimen/_20pxh">
+                            <TextView
+                                android:gravity="center_vertical"
+                                android:layout_column="1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/lbl_telepon"
+                                style="@style/txtMontserratbold16_2"/>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:text="@string/lbl_62"
+                                    style="@style/txtMontserratbold16_3"/>
+                                <TextView
+                                    android:id="@+id/txtTeleponProfil"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    style="@style/txtMontserratbold16_3"/>
+                            </LinearLayout>
+                        </TableRow>
+
+                        <!-- Keahlian -->
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="@dimen/_20pxh">
+                            <TextView
+                                android:layout_column="1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/lbl_keahlian"
+                                style="@style/txtMontserratbold16_2"/>
+                            <TextView
+                                android:id="@+id/txtKeahlianProfil"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="match_parent"
+                                style="@style/txtMontserratbold16_3"/>
+                        </TableRow>
+                    </TableLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginTop="@dimen/_20pxh">
+
+                        <!-- Download -->
+                        <TextView
+                            android:id="@+id/txtDownloadFile"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:paddingStart="@dimen/_20pxh"
+                            android:paddingEnd="@dimen/_20pxh"
+                            android:padding="@dimen/_10pxh"
+                            android:layout_gravity="start"
+                            android:text="@string/lbl_download_file"
+                            android:drawablePadding="@dimen/_20pxh"
+                            style="@style/groupStyleteal_400cornerRadius_2"
+                            app:drawableStartCompat="@drawable/img_downloadsolid" />
                     </LinearLayout>
                 </LinearLayout>
 
-            </ScrollView>
-        </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/layout_profil2"
+                    android:layout_gravity="center"
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    style="@style/groupStylewhite_A700">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center|top"
+                        android:layout_marginStart="@dimen/_30pxh"
+                        android:layout_marginEnd="@dimen/_30pxh">
+
+                        <!-- Edit Profil -->
+                        <LinearLayout
+                            android:layout_marginTop="@dimen/_30pxh"
+                            android:clickable="true"
+                            android:id="@+id/btn_editprofil"
+                            android:gravity="center"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:padding="@dimen/_15pxh"
+                            android:layout_marginBottom="@dimen/_30pxh"
+                            android:layout_width="match_parent"
+                            android:orientation="horizontal"
+                            style="@style/groupStylegreen_400cornerRadius_2"
+                            android:focusable="true">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center">
+                                <ImageView
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_width="wrap_content"
+                                    android:scaleType="fitXY"
+                                    android:src="@drawable/img_userpensolid"
+                                    android:contentDescription="@string/icon_editprofil" />
+
+                                <TextView
+                                    android:ellipsize="end"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/_20pxh"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="1"
+                                    android:layout_width="0dp"
+                                    android:singleLine="true"
+                                    style="@style/txtMontserratbold20_2"
+                                    android:text="@string/lbl_edit_profil"/>
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <!-- Change Password -->
+                        <LinearLayout
+                            android:id="@+id/btn_changepass"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:gravity="center"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:padding="@dimen/_15pxh"
+                            android:layout_marginBottom="@dimen/_30pxh"
+                            android:layout_width="match_parent"
+                            android:orientation="horizontal"
+                            style="@style/groupStylegreen_400cornerRadius_2">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center">
+                                <ImageView
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_width="wrap_content"
+                                    android:scaleType="fitXY"
+                                    android:src="@drawable/img_keysolid1"
+                                    android:contentDescription="@string/icon_editpass" />
+
+                                <TextView
+                                    android:ellipsize="end"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/_20pxh"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="1"
+                                    android:layout_width="0dp"
+                                    android:singleLine="true"
+                                    style="@style/txtMontserratbold20_2"
+                                    android:text="@string/lbl_change_password"/>
+                            </LinearLayout>
+
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+        </ScrollView>
     </LinearLayout>
+</LinearLayout>

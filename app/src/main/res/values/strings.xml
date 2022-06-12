@@ -27,7 +27,7 @@
     <string name="lbl_tabel_skp2">tabel_skp</string>
     <string name="lbl_kode_kegiatan">Kode Kegiatan</string>
     <string name="lbl_ket">Ket</string>
-    <string name="msg_belum_mengajuka">Belum Mengajukan Nilai</string>
+    <string name="msg_belum_mengajukan">Belum Mengajukan Nilai</string>
     <string name="lbl_siang">Siang</string>
     <string name="lbl_didan_hatama4">Didan Hatama</string>
     <string name="lbl_didan_hatama5">Didan Hatama</string>
@@ -39,11 +39,10 @@
     <string name="lbl_foto">Foto</string>
     <string name="msg_current_passwor">Current Password</string>
     <string name="lbl_change_pass">change_pass</string>
-    <string name="msg_uraian_pekerjaa">Uraian
-Pekerjaan</string>
+    <string name="msg_uraian_pekerjaa">Uraian Pekerjaan</string>
     <string name="lbl_kontak_kami">Kontak Kami</string>
     <string name="lbl_fullname">Fullname</string>
-    <string name="lbl_tambah_form">Tambah Form</string>
+    <string name="lbl_tambah_form">Tambah</string>
     <string name="lbl_pengajuan_skp">Pengajuan SKP</string>
     <string name="lbl_sudah_selesai">Sudah Selesai</string>
     <string name="lbl_tabel_presensi">Tabel Presensi</string>
@@ -62,12 +61,12 @@ Pekerjaan</string>
     <string name="lbl_splashscreen">splashscreen</string>
     <string name="msg_09_03_2022_13_5">09-03-2022 13:54:04</string>
     <string name="lbl_tahun">Tahun</string>
+    <string name="lbl_bulan_tahun">Bulan dan Tahun</string>
     <string name="lbl_skp">SKP</string>
     <string name="lbl_re_password">Re-password</string>
     <string name="lbl_bulan">Bulan</string>
     <string name="lbl_riwayat">Riwayat</string>
-    <string name="lbl_jumlah_kegiatan">Jumlah
-Kegiatan</string>
+    <string name="lbl_jumlah_kegiatan">Jumlah Kegiatan</string>
     <string name="lbl_pengajuan_skp2">pengajuan_skp</string>
     <string name="lbl_tabel_kegiatan2">tabel_kegiatan</string>
     <string name="msg_jalan_mr_koess">Jalan Mr. Koessoebiyono Tjondro Wibowo</string>
@@ -89,10 +88,11 @@ Kegiatan</string>
     <string name="lbl_upload_keahlian">Upload Keahlian</string>
     <string name="lbl_nama_skp">Nama SKP</string>
     <string name="msg_kodya_semarang">Kodya Semarang 50227 | Jawa Tengah, Indonesia
-Telp 024-8314292 | Fax 024-8310051</string>
+        Telp 024-8314292 | Fax 024-8310051</string>
     <string name="lbl_nama">Nama</string>
     <string name="lbl_sign_up">Sign Up</string>
     <string name="lbl_terlambat">Terlambat</string>
+    <string name="lbl_edit">Edit</string>
     <string name="lbl_edit_skp">Edit SKP</string>
     <string name="lbl_15">15</string>
     <string name="lbl_edit_profil">Edit Profil</string>
@@ -109,8 +109,7 @@ Telp 024-8314292 | Fax 024-8310051</string>
     <string name="msg_membuat_aplikas2">Membuat Aplikasi Kimia SMP</string>
     <string name="lbl_dashboard">Dashboard</string>
     <string name="lbl_1">1</string>
-    <string name="lbl_metode_kerja">Metode
-Kerja</string>
+    <string name="lbl_metode_kerja">Metode Kerja</string>
     <string name="lbl_2">2</string>
     <string name="lbl_presensi2">presensi</string>
     <string name="lbl_nilai_skp2">nilai_skp</string>
@@ -154,11 +153,29 @@ Kerja</string>
     <string name="checked_menu">checked_menu</string>
     <string name="icon_pengajuanskp">icon_pengajuanskp</string>
     <string name="icon_tabelskp">icon_tabelskp</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="membuat_aplikasi_mobile">Membuat Aplikasi Mobile</string>
     <string name="selected_item">Selected Item</string>
     <string name="login_logo">login_logo</string>
     <string name="exclamation">!</string>
+    <string name="colon">:</string>
     <string name="change_image">Change Image</string>
+    <string name="pilih_tanggal">Pilih Tanggal</string>
+    <string name="lbl_id_skp">ID SKP</string>
+    <string name="lbl_edit_pengajuan_skp">Edit Pengajuan SKP</string>
+    <string name="lbl_status_validasi">Status Validasi</string>
+    <string name="lbl_sedang_proses">Sedang Proses</string>
+    <string name="data_tidak_ditemukan">Data Tidak Ditemukan</string>
+    <string name="xxxxxxxxxxx">xxxxxxxxxxx</string>
+    <string name="lbl_upload_foto">Upload Foto</string>
+    <string name="lbl_upload_file">Upload File</string>
+    <string name="lbl_tabel_log_kegiatan">Tabel Log Kegiatan</string>
+    <string name="lbl_kegiatan_id">Kegiatan ID</string>
+    <string name="msg_uraian">Uraian</string>
+    <string name="lbl_word">Word</string>
+    <string name="lbl_file_categories">Kategori File</string>
+    <string name="lbl_tanpa_skp">Tanpa SKP</string>
+    <string name="lbl_dengan_skp">Dengan SKP</string>
+    <string name="lbl_edit_logkeg">Edit Log Kegiatan</string>
+
 </resources>

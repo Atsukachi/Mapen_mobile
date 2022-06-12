@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
     android:orientation="vertical"
-    tools:context=".EditProfilFragment">
+    tools:context=".skp.NilaiSKP">
 
     <FrameLayout
         android:id="@+id/fl_editprofil"
@@ -38,7 +38,7 @@
                     android:contentDescription="@string/arrowback" />
 
                 <TextView
-                    android:id="@+id/txtChangePassword"
+                    android:id="@+id/txtHeaderPengajuanSKP"
                     style="@style/txtMontserratbold20"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -50,7 +50,7 @@
                     android:ellipsize="end"
                     android:gravity="end|center"
                     android:singleLine="true"
-                    android:text="@string/lbl_log_kegiatan" />
+                    android:text="@string/lbl_nilai_skp" />
             </RelativeLayout>
         </LinearLayout>
     </FrameLayout>
@@ -66,7 +66,7 @@
         <ScrollView
             android:clipToPadding="false"
             android:fillViewport="true"
-            android:id="@+id/sv_editprofil"
+            android:id="@+id/sv_pengajuan_skp"
             android:layout_height="0dp"
             android:layout_weight="1"
             android:layout_width="match_parent">
@@ -75,14 +75,17 @@
                 android:gravity="start"
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:paddingTop="@dimen/_30pxh">
 
-                <!-- Kode Kegiatan -->
+                <!-- Rincian Pekerjaan -->
                 <LinearLayout
                     android:gravity="start"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_30pxv"
                     android:layout_width="match_parent"
                     android:orientation="vertical">
+
                     <TextView
                         style="@style/txtMontserratbold20_3"
                         android:layout_width="wrap_content"
@@ -90,9 +93,81 @@
                         android:layout_marginStart="@dimen/_30pxh"
                         android:ellipsize="end"
                         android:singleLine="true"
-                        android:text="@string/lbl_kode_kegiatan" />
+                        android:text="@string/msg_rincian_pekerja" />
+
+                    <LinearLayout
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_30pxh"
+                        android:layout_marginStart="@dimen/_30pxh"
+                        android:layout_marginTop="@dimen/_20pxv"
+                        android:layout_width="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/txtNamaNilaiSKP"
+                            android:gravity="top|start"
+                            android:inputType="text|textMultiLine"
+                            style="@style/txtSolidRoundedOutline"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_100pxh"
+                            android:paddingStart="@dimen/_25pxh"
+                            android:paddingEnd="@dimen/_25pxh"
+                            android:paddingTop="@dimen/_16pxv"
+                            android:paddingBottom="@dimen/_15pxv"
+                            android:text="@string/membuat_aplikasi_mobile"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Nilai -->
+                <LinearLayout
+                    android:gravity="start"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_30pxv"
+                    android:layout_width="match_parent"
+                    android:orientation="vertical">
+
                     <TextView
-                        android:id="@+id/txtKodeKeg"
+                        style="@style/txtMontserratbold20_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_30pxh"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:text="@string/lbl_nilai" />
+
+                    <EditText
+                        android:id="@+id/txtNilaiSKP"
+                        style="@style/txtSolidRoundedOutline_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_30pxh"
+                        android:layout_marginTop="@dimen/_20pxv"
+                        android:layout_marginEnd="@dimen/_30pxh"
+                        android:paddingStart="@dimen/_25pxh"
+                        android:paddingTop="@dimen/_16pxv"
+                        android:paddingEnd="@dimen/_25pxh"
+                        android:paddingBottom="@dimen/_15pxv" />
+                </LinearLayout>
+
+                <!-- Cek Validasi -->
+                <LinearLayout
+                    android:gravity="start"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_30pxv"
+                    android:layout_width="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/txtMontserratbold20_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_30pxh"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:text="@string/lbl_status_validasi" />
+
+                    <TextView
+                        android:id="@+id/txtStatusValidasiNilaiSKP"
                         style="@style/txtSolidRoundedOutline"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -103,182 +178,32 @@
                         android:paddingTop="@dimen/_16pxv"
                         android:paddingEnd="@dimen/_25pxh"
                         android:paddingBottom="@dimen/_15pxv"
-                        android:text="@string/lbl_mpnp0903220001"/>
+                        android:text="@string/msg_belum_mengajukan"/>
                 </LinearLayout>
 
-                <!-- SKP -->
+                <!-- Line -->
+                <View
+                    android:background="@color/gray_400"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_height="@dimen/_3pxv"
+                    android:layout_marginEnd="@dimen/_30pxh"
+                    android:layout_marginStart="@dimen/_30pxh"
+                    android:layout_marginTop="@dimen/_40pxv"
+                    android:layout_width="match_parent"/>
+
                 <LinearLayout
-                    android:gravity="start"
+                    android:gravity="center"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_30pxv"
-                    android:layout_width="match_parent"
-                    android:orientation="vertical">
-                    <TextView
-                        style="@style/txtMontserratbold20_3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/_30pxh"
-                        android:ellipsize="end"
-                        android:singleLine="true"
-                        android:text="@string/lbl_skp" />
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:background="@drawable/rectangle_bg_white_a700_border_black_900_radius_25"
-                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/_30pxh"
-                        android:layout_marginTop="@dimen/_20pxv"
-                        android:layout_marginEnd="@dimen/_30pxh"
-                        android:paddingTop="@dimen/_16pxv"
-                        android:paddingBottom="@dimen/_15pxv">
-                        <AutoCompleteTextView
-                            android:labelFor="@id/txtSKP"
-                            style="@style/txtMontserratbold20_1"
-                            android:layout_marginStart="@dimen/_20pxh"
-                            android:layout_marginEnd="@dimen/_20pxh"
-                            android:inputType="none"
-                            android:id="@+id/txtSKP"
-                            android:layout_width="match_parent"
-                            android:layout_weight="1"
-                            android:layout_height="match_parent"/>
-                    </com.google.android.material.textfield.TextInputLayout>
-                </LinearLayout>
-
-                <!-- Unit Kerja -->
-                <LinearLayout
-                    android:gravity="start"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_30pxv"
-                    android:layout_width="match_parent"
-                    android:orientation="vertical">
-                    <TextView
-                        style="@style/txtMontserratbold20_3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/_30pxh"
-                        android:ellipsize="end"
-                        android:singleLine="true"
-                        android:text="@string/lbl_unit_kerja" />
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:background="@drawable/rectangle_bg_white_a700_border_black_900_radius_25"
-                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/_30pxh"
-                        android:layout_marginTop="@dimen/_20pxv"
-                        android:layout_marginEnd="@dimen/_30pxh"
-                        android:paddingTop="@dimen/_16pxv"
-                        android:paddingBottom="@dimen/_15pxv"
-                        android:hint="@string/selected_item">
-                        <AutoCompleteTextView
-                            android:labelFor="@id/txtUnitKerja"
-                            style="@style/txtMontserratbold20_1"
-                            android:layout_marginStart="@dimen/_20pxh"
-                            android:layout_marginEnd="@dimen/_20pxh"
-                            android:inputType="none"
-                            android:id="@+id/txtUnitKerja"
-                            android:layout_width="match_parent"
-                            android:layout_weight="1"
-                            android:layout_height="match_parent"
-                            android:text="@string/membuat_aplikasi_mobile"/>
-                    </com.google.android.material.textfield.TextInputLayout>
-                </LinearLayout>
-
-                <!-- Uraian Pekerjaan -->
-                <LinearLayout
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_30pxv"
-                    android:layout_width="match_parent"
-                    android:orientation="vertical">
-                    <TextView
-                        style="@style/txtMontserratbold20_3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/_30pxh"
-                        android:ellipsize="end"
-                        android:singleLine="true"
-                        android:text="@string/msg_uraian_pekerjaa" />
-
-                        <TextView
-                            android:padding="@dimen/_20pxh"
-                            style="@style/txtMontserratbold20_1"
-                            android:background="@drawable/rectangle_bg_white_a700_border_black_900_radius_25"
-                            android:id="@+id/viewRectangle14"
-                            android:layout_gravity="center_horizontal"
-                            android:layout_height="@dimen/_120pxv"
-                            android:layout_marginEnd="@dimen/_30pxh"
-                            android:layout_marginStart="@dimen/_30pxh"
-                            android:layout_marginTop="@dimen/_20pxv"
-                            android:layout_width="match_parent"/>
-                </LinearLayout>
-
-                <!-- File -->
-                <LinearLayout
-                    android:gravity="start"
-                    android:id="@+id/linearGroup261"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_30pxv"
-                    android:layout_width="match_parent"
-                    android:orientation="vertical">
-                    <TextView
-                        style="@style/txtMontserratbold20_3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/_30pxh"
-                        android:ellipsize="end"
-                        android:singleLine="true"
-                        android:text="@string/lbl_file" />
-                    <TextView
-                        android:id="@+id/txtKeahlian"
-                        style="@style/txtSolidRoundedOutline_1"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/_30pxh"
-                        android:layout_marginTop="@dimen/_20pxv"
-                        android:layout_marginEnd="@dimen/_30pxh"
-                        android:paddingStart="@dimen/_25pxh"
-                        android:paddingTop="@dimen/_16pxv"
-                        android:paddingEnd="@dimen/_25pxh"
-                        android:paddingBottom="@dimen/_15pxv"
-                        android:text="@string/lbl_cv_mapen_pdf"/>
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:layout_marginStart="@dimen/_30pxh"
-                        android:layout_marginTop="@dimen/_20pxh">
-                        <!-- Upload -->
-                        <TextView
-                            android:id="@+id/txtUploadKeahlian"
-                            android:layout_marginBottom="@dimen/_20pxh"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:paddingStart="@dimen/_20pxh"
-                            android:paddingEnd="@dimen/_20pxh"
-                            android:padding="@dimen/_10pxh"
-                            android:layout_gravity="start"
-                            android:text="@string/lbl_unggah_dokumen"
-                            android:drawablePadding="@dimen/_20pxh"
-                            style="@style/groupStyleteal_400cornerRadius"
-                            app:drawableStartCompat="@drawable/img_uploadsolid_1" />
-
-                    </LinearLayout>
-
-                </LinearLayout>
-
-                <!-- Button Submit -->
-                <LinearLayout
-                    android:gravity="start"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_60pxv"
+                    android:layout_marginTop="@dimen/_60pxh"
                     android:layout_marginBottom="@dimen/_30pxv"
                     android:layout_marginStart="@dimen/_30pxh"
                     android:layout_marginEnd="@dimen/_30pxh"
                     android:layout_width="match_parent"
-                    android:orientation="vertical">
+                    android:orientation="horizontal">
 
+                    <!-- Button Save -->
                     <LinearLayout
+                        android:id="@+id/btn_save_nilaiskp"
                         style="@style/groupStyleorange_500cornerRadius"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -291,7 +216,7 @@
                             android:id="@+id/imageFloppydisksol"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="@dimen/_20pxh"
+                            android:layout_marginStart="@dimen/_10pxh"
                             android:contentDescription="@string/icon_save"
                             android:scaleType="fitXY"
                             android:src="@drawable/img_floppydisksol" />
@@ -301,7 +226,7 @@
                             style="@style/txtMontserratbold20_1"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="@dimen/_25pxh"
-                            android:layout_marginEnd="@dimen/_20pxh"
+                            android:layout_marginEnd="@dimen/_10pxh"
                             android:layout_weight="1"
                             android:ellipsize="end"
                             android:singleLine="true"
@@ -309,9 +234,7 @@
                             android:layout_width="0dp" />
                     </LinearLayout>
                 </LinearLayout>
-
             </LinearLayout>
         </ScrollView>
-
     </LinearLayout>
 </LinearLayout>

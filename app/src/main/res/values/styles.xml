@@ -120,6 +120,9 @@
     <style name="groupStyleteal_400cornerRadius" parent="txtMontserratbold20_2">
         <item name="android:background">@drawable/rectangle_bg_teal_400_radius_15</item>
     </style>
+    <style name="groupStyleteal_400cornerRadius_2" parent="txtMontserratbold16">
+        <item name="android:background">@drawable/rectangle_bg_teal_400_radius_15</item>
+    </style>
     <style name="groupStylegreen_400cornerRadius">
         <item name="android:background">@drawable/rectangle_bg_green_400_radius_15</item>
     </style>
@@ -155,6 +158,9 @@
     </style>
     <style name="groupStylewhite_A700cornerRadius">
         <item name="android:background">@drawable/rectangle_bg_white_a700_radius_25</item>
+    </style>
+    <style name="groupStylewhite_A700cornerRadius_shadow">
+        <item name="android:background">@drawable/rectangle_bg_white_a700_radius_25_shadow</item>
     </style>
     <style name="txtMontserratbold24_3" parent="txtMontserratbold24_1">
         <item name="android:textColor">@color/red_A700</item>

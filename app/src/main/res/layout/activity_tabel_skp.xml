@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".skp.TabelSKP">
+
+    <FrameLayout
+        android:id="@+id/fl_editprofil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <!-- Top Navbar -->
+        <LinearLayout
+            android:gravity="center"
+            android:layout_gravity="bottom"
+            android:layout_height="@dimen/_70pxv"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            style="@style/groupStylewhite_A700">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="bottom|center_vertical"
+                android:layout_marginTop="@dimen/_16pxh">
+
+                <ImageView
+                    android:id="@+id/arrow_back"
+                    android:layout_width="10dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="@dimen/_30pxh"
+                    android:scaleType="fitXY"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/img_angleleftsoli"
+                    android:contentDescription="@string/arrowback" />
+
+                <TextView
+                    android:id="@+id/txtChangePassword"
+                    style="@style/txtMontserratbold20"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/_60pxh"
+                    android:layout_marginEnd="@dimen/_30pxh"
+                    android:ellipsize="end"
+                    android:gravity="end|center"
+                    android:singleLine="true"
+                    android:text="@string/lbl_tabel_skp" />
+            </RelativeLayout>
+        </LinearLayout>
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_tabelskp"
+        android:gravity="start"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        style="@style/groupStylewhite_A700">
+
+        <ScrollView
+            android:clipToPadding="false"
+            android:fillViewport="true"
+            android:id="@+id/sv_tabelskp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_width="match_parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_tabelskp"
+                android:layout_margin="@dimen/_20pxh"
+                android:padding="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </ScrollView>
+    </LinearLayout>
+</LinearLayout>

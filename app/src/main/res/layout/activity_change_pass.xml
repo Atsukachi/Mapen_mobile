@@ -4,10 +4,7 @@
     android:layout_height="wrap_content"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    tools:context=".ChangePassword">
-
-<!--    <include-->
-<!--        layout="@layout/toolbar"/>-->
+    tools:context=".profil.ChangePassword">
 
     <FrameLayout
         android:layout_width="wrap_content"
@@ -173,6 +170,16 @@
                         android:paddingEnd="@dimen/_25pxh"
                         android:paddingBottom="@dimen/_15pxv" />
                 </LinearLayout>
+
+                <!-- Line -->
+                <View
+                    android:background="@color/gray_400"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_height="@dimen/_3pxv"
+                    android:layout_marginEnd="@dimen/_30pxh"
+                    android:layout_marginStart="@dimen/_30pxh"
+                    android:layout_marginTop="@dimen/_40pxv"
+                    android:layout_width="match_parent"/>
 
                 <!-- Button Submit -->
                 <LinearLayout

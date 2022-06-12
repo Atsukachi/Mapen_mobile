@@ -5,7 +5,6 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -13,6 +12,9 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
+import com.example.mapen.fragment.KegiatanFragment;
+import com.example.mapen.fragment.ProfilFragment;
+import com.example.mapen.fragment.SKPFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import com.example.mapen.api.ApiClient;
@@ -24,7 +26,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     TextView navbar_name;
     LinearLayout navbar_back;
     SharedPreferences sp;
-    String imageUser, getUrl;
+    String extras, imageUser, getUrl, imageBaru;
     CircleImageView userImage;
 
     @Override
@@ -41,12 +43,20 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         checkuser();
         userImage = findViewById(R.id.user_image);
         getUrl = ApiClient.imageUrl;
-        imageUser = getUrl + sp.getString("image", "");
 
-        Glide.with(this)
-                .load(imageUser)
-                .into(userImage);
-
+        extras = getIntent().getStringExtra("fotobaru");
+        if (extras != null) {
+            Log.d("NEW", extras);
+            imageUser = getUrl + extras;
+            Glide.with(this)
+                    .load(imageUser)
+                    .into(userImage);
+        } else {
+            imageUser = getUrl + sp.getString("image", "");
+            Glide.with(this)
+                    .load(imageUser)
+                    .into(userImage);
+        }
 
         navbar_back = findViewById(R.id.btn_logout);
         navbar_back.setOnClickListener(view -> {

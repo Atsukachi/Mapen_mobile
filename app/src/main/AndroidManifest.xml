@@ -3,6 +3,8 @@
     package="com.example.mapen">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
@@ -10,9 +12,17 @@
         android:icon="@mipmap/ic_launcher"
         android:label="Mapen"
         android:networkSecurityConfig="@xml/network_security_config"
+        android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/mapen_style">
+        <activity android:name=".kegiatan.EditLogKegiatan"></activity>
+        <activity android:name=".kegiatan.TabelLogKegiatan" />
+        <activity android:name=".kegiatan.LogKegiatan" />
+        <activity android:name=".skp.NilaiSKP" />
+        <activity android:name=".skp.EditSKP" />
+        <activity android:name=".skp.TabelSKP" />
+        <activity android:name=".skp.PengajuanSKP" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".Splashscreen">
             <intent-filter>
@@ -22,8 +32,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity" />
-        <activity android:name=".ChangePassword" />
-        <activity android:name=".EditProfil"/>
+        <activity android:name=".profil.ChangePassword" />
+        <activity android:name=".profil.EditProfil" />
     </application>
 
 </manifest>

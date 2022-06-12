@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    tools:context=".EditProfil">
+    tools:context=".profil.EditProfil">
 
     <FrameLayout
         android:id="@+id/fl_editprofil"
@@ -64,6 +64,7 @@
         style="@style/groupStylewhite_A700">
 
         <ScrollView
+            android:scrollbars="none"
             android:clipToPadding="false"
             android:fillViewport="true"
             android:id="@+id/sv_editprofil"
@@ -79,23 +80,24 @@
                 android:paddingTop="@dimen/_30pxh">
 
                 <!-- Foto -->
-                <LinearLayout
-                    android:layout_width="match_parent"
+                <FrameLayout
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
-                    android:gravity="center">
+                    android:layout_gravity="center">
                     <de.hdodenhof.circleimageview.CircleImageView
-                        android:id="@+id/user_image"
+                        android:id="@+id/user_image_editprofil"
                         android:layout_width="@dimen/_125pxh"
                         android:layout_height="@dimen/_125pxh"
                         android:src="@drawable/user_image"/>
-                    <TextView
-                        android:paddingTop="@dimen/_10pxh"
+                    <com.google.android.material.floatingactionbutton.FloatingActionButton
+                        android:id="@+id/fab_editfoto"
                         android:layout_width="wrap_content"
+                        android:backgroundTint="#80000000"
                         android:layout_height="wrap_content"
-                        android:text="@string/change_image"
-                        style="@style/txtMontserratbold16_3"/>
-                </LinearLayout>
+                        android:layout_gravity="bottom|end"
+                        android:src="@drawable/img_edit" />
+                </FrameLayout>
 
                 <!-- Nama -->
                 <LinearLayout
@@ -123,8 +125,7 @@
                         android:paddingStart="@dimen/_25pxh"
                         android:paddingTop="@dimen/_16pxv"
                         android:paddingEnd="@dimen/_25pxh"
-                        android:paddingBottom="@dimen/_15pxv"
-                        android:text="@string/lbl_didan_hatama2"/>
+                        android:paddingBottom="@dimen/_15pxv" />
                 </LinearLayout>
 
                 <!-- Email -->
@@ -153,8 +154,7 @@
                         android:paddingStart="@dimen/_25pxh"
                         android:paddingTop="@dimen/_16pxv"
                         android:paddingEnd="@dimen/_25pxh"
-                        android:paddingBottom="@dimen/_15pxv"
-                        android:text="@string/msg_didan_hafizpp16"/>
+                        android:paddingBottom="@dimen/_15pxv" />
                 </LinearLayout>
 
                 <!-- Alamat -->
@@ -189,8 +189,7 @@
                             android:paddingStart="@dimen/_25pxh"
                             android:paddingEnd="@dimen/_25pxh"
                             android:paddingTop="@dimen/_16pxv"
-                            android:paddingBottom="@dimen/_15pxv"
-                            android:text="@string/msg_jalan_badak_iv"/>
+                            android:paddingBottom="@dimen/_15pxv" />
                     </LinearLayout>
                 </LinearLayout>
 
@@ -236,7 +235,6 @@
                             android:paddingTop="@dimen/_7pxv"
                             android:singleLine="true"
                             style="@style/txtSolidRoundedOutline_1"
-                            android:text="@string/lbl_81319263062"
                             android:maxLength="12"/>
                     </LinearLayout>
                 </LinearLayout>
@@ -259,7 +257,7 @@
                         android:text="@string/lbl_keahlian" />
                     <TextView
                         android:id="@+id/txtKeahlianEditProfil"
-                        style="@style/txtSolidRoundedOutline_1"
+                        style="@style/txtSolidRoundedOutline"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/_30pxh"
@@ -268,10 +266,10 @@
                         android:paddingStart="@dimen/_25pxh"
                         android:paddingTop="@dimen/_16pxv"
                         android:paddingEnd="@dimen/_25pxh"
-                        android:paddingBottom="@dimen/_15pxv"
-                        android:text="@string/lbl_cv_mapen_pdf"/>
+                        android:paddingBottom="@dimen/_15pxv" />
 
                     <LinearLayout
+                        android:id="@+id/btn_uploadkeahlian_ep"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
@@ -279,8 +277,6 @@
                         android:layout_marginTop="@dimen/_20pxh">
                         <!-- Upload -->
                         <TextView
-                            android:id="@+id/txtUploadKeahlian"
-                            android:layout_marginBottom="@dimen/_20pxh"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:paddingStart="@dimen/_20pxh"
@@ -293,21 +289,31 @@
                             app:drawableStartCompat="@drawable/img_uploadsolid_1" />
 
                         <!-- Download -->
-                        <TextView
-                            android:id="@+id/txtDownloadFile"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:paddingStart="@dimen/_20pxh"
-                            android:paddingEnd="@dimen/_20pxh"
-                            android:padding="@dimen/_10pxh"
-                            android:layout_gravity="start"
-                            android:text="@string/lbl_download_file"
-                            android:drawablePadding="@dimen/_20pxh"
-                            style="@style/groupStyleteal_400cornerRadius"
-                            app:drawableStartCompat="@drawable/img_downloadsolid" />
+<!--                        <TextView-->
+<!--                            android:id="@+id/txtDownloadFile"-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="match_parent"-->
+<!--                            android:paddingStart="@dimen/_20pxh"-->
+<!--                            android:paddingEnd="@dimen/_20pxh"-->
+<!--                            android:padding="@dimen/_10pxh"-->
+<!--                            android:layout_gravity="start"-->
+<!--                            android:text="@string/lbl_download_file"-->
+<!--                            android:drawablePadding="@dimen/_20pxh"-->
+<!--                            style="@style/groupStyleteal_400cornerRadius"-->
+<!--                            app:drawableStartCompat="@drawable/img_downloadsolid" />-->
                     </LinearLayout>
 
                 </LinearLayout>
+
+                <!-- Line -->
+                <View
+                    android:background="@color/gray_400"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_height="@dimen/_3pxv"
+                    android:layout_marginEnd="@dimen/_30pxh"
+                    android:layout_marginStart="@dimen/_30pxh"
+                    android:layout_marginTop="@dimen/_40pxv"
+                    android:layout_width="match_parent"/>
 
                 <!-- Button Submit -->
                 <LinearLayout

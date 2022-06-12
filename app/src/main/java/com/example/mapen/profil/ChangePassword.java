@@ -1,20 +1,19 @@
-package com.example.mapen;
+package com.example.mapen.profil;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.mapen.MainActivity;
+import com.example.mapen.R;
 import com.example.mapen.api.ApiClient;
-import com.example.mapen.api.MapenService;
 import com.example.mapen.data.ChangepassResponse;
 
 import retrofit2.Call;
@@ -23,11 +22,9 @@ import retrofit2.Response;
 
 public class ChangePassword extends AppCompatActivity implements View.OnClickListener{
     ImageView btn_back;
-    TextView iniemail;
     LinearLayout btn_save_cp;
     String current_password, new_password1, new_password2, email, email_cp, status_cp;
     EditText cp_pass, cp_newpass1, cp_newpass2;
-    MapenService serviceAPI;
     SharedPreferences sp;
 
     @Override
@@ -71,7 +68,6 @@ public class ChangePassword extends AppCompatActivity implements View.OnClickLis
 
         if(sp.contains("user_id")){
             email = sp.getString("email", "");
-            Log.d("TAG", email);
 
             Call<ChangepassResponse> call = ApiClient
                     .getInstance()
@@ -98,7 +94,7 @@ public class ChangePassword extends AppCompatActivity implements View.OnClickLis
                         if(status_cp.equals("success"))
                         {
                             Toast.makeText(ChangePassword.this, "Change Password Success", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                            startActivity(new Intent(getApplicationContext(), MainActivity.class));
                             finish();
                         }
                     }
