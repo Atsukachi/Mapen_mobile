@@ -8,19 +8,22 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class ApiClient {
 
     // Rumah
-//    private static final String url = "http://192.168.100.12/mapen/index.php/";
-//    public static final String imageUrl = "http://192.168.100.12/mapen/assets/images/users/";
-//    public static final String kegiatan_imageUrl = "http://192.168.100.12/mapen/assets/document/kegiatan/photo/";
+    private static final String url = "http://192.168.100.9/mapen/index.php/";
+    public static final String imageUrl = "http://192.168.100.9/mapen/assets/images/users/";
+    public static final String kegiatan_imageUrl = "http://192.168.100.9/mapen/assets/document/kegiatan/photo/";
+    public static final String profil_keahlianUrl = "http://192.168.100.9/mapen/assets/document/users/";
 
     // Umum
-    private static final String url = "http://192.168.67.250/mapen/index.php/";
-    public static final String imageUrl = "http://192.168.67.250/mapen/assets/images/users/";
-    public static final String kegiatan_imageUrl = "http://192.168.67.250/mapen/assets/document/kegiatan/photo/";
+//    private static final String url = "http://192.168.67.250/mapen/index.php/";
+//    public static final String imageUrl = "http://192.168.67.250/mapen/assets/images/users/";
+//    public static final String kegiatan_imageUrl = "http://192.168.67.250/mapen/assets/document/kegiatan/photo/";
+//    public static final String profil_keahlianUrl = "http://192.168.67.250/mapen/assets/document/users/";
 
     // CoE
-//    private static final String url = "http://192.168.34.239/mapen/index.php/";
-//    public static final String imageUrl = "http://192.168.34.239/mapen/assets/images/users/";
-//    public static final String kegiatan_imageUrl = "http://192.168.34.239/mapen/assets/document/kegiatan/photo/";
+//    private static final String url = "http://192.168.34.111/mapen/index.php/";
+//    public static final String imageUrl = "http://192.168.34.111/mapen/assets/images/users/";
+//    public static final String kegiatan_imageUrl = "http://192.168.34.111/mapen/assets/document/kegiatan/photo/";
+//    public static final String profil_keahlianUrl = "http://192.168.34.111/mapen/assets/document/users/";
 
     private static ApiClient clientObject;
     private static Retrofit retrofit;
