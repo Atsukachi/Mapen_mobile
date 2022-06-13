@@ -175,6 +175,6 @@ public class ProfilFragment extends Fragment implements View.OnClickListener {
         DownloadManager manager = (DownloadManager) getActivity().getSystemService(getContext().DOWNLOAD_SERVICE);
         manager.enqueue(request);
 
-        Toast.makeText(getActivity(), "Download", Toast.LENGTH_LONG).show();
+        Toast.makeText(getActivity(), "Downloaded File!", Toast.LENGTH_LONG).show();
     }
 }
