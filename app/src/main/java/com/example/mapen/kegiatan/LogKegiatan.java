@@ -341,7 +341,7 @@ public class LogKegiatan extends AppCompatActivity implements View.OnClickListen
             requestSKP = RequestBody.create(MediaType.parse("text/plain"), idskp_lk);
 
             Call<TabelLogKegiatanData> logkegCall = ApiClient
-                    .getLogKegiatanService()
+                    .getPresensiService()
                     .log_kegiatan(partFile, requestUser, requestUnitKerja, requestUraian, requestSKP);
 
             logkegCall.enqueue(new Callback<TabelLogKegiatanData>() {

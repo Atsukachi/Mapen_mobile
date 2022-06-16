@@ -165,5 +165,8 @@
     <style name="txtMontserratbold24_3" parent="txtMontserratbold24_1">
         <item name="android:textColor">@color/red_A700</item>
     </style>
+    <style name="AlertDialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="colorAccent">@color/teal_200</item>
+    </style>
 
 </resources>

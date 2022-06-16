@@ -4,11 +4,14 @@ import com.example.mapen.data.ChangepassResponse;
 import com.example.mapen.data.EditProfilResponse;
 import com.example.mapen.data.GetBulanResponse;
 import com.example.mapen.data.KodeKegiatanResponse;
+import com.example.mapen.data.MetodeKerjaResponse;
+import com.example.mapen.data.RiwayatPresensiResponse;
 import com.example.mapen.data.TabelLogKegiatanData;
 import com.example.mapen.data.TabelLogKegiatanResponse;
 import com.example.mapen.data.LoginResponse;
 import com.example.mapen.data.PengajuanskpResponse;
 import com.example.mapen.data.SkpByIdResponse;
+import com.example.mapen.data.TabelPresensiResponse;
 import com.example.mapen.data.TabelskpResponse;
 import com.example.mapen.data.UnitKerjaResponse;
 
@@ -143,5 +146,27 @@ public interface MapenService {
             @Part("unitkerja") RequestBody unitkerja,
             @Part("uraian") RequestBody uraian,
             @Part("skp") RequestBody skp
+    );
+
+    // Presensi
+    @GET("C_Presensi/metodekerja")
+    Call<List<MetodeKerjaResponse>> metode_kerja();
+
+    @GET("C_Presensi/waktu")
+    Call<RiwayatPresensiResponse> riwayat_presensi(
+            @Query("id_user") String id_user,
+            @Query("riwayat") String riwayat
+    );
+
+    @Multipart
+    @POST("C_Presensi/")
+    Call<TabelPresensiResponse> presensi(
+            @Part MultipartBody.Part file,
+            @Part("user_id") RequestBody user_id,
+            @Part("riwayat") RequestBody riwayat,
+            @Part("status") RequestBody status,
+            @Part("kerja") RequestBody kerja,
+            @Part("lat") RequestBody lat,
+            @Part("lng") RequestBody lng
     );
 }

@@ -8,10 +8,10 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class ApiClient {
 
     // Rumah
-    private static final String url = "http://192.168.100.9/mapen/index.php/";
-    public static final String imageUrl = "http://192.168.100.9/mapen/assets/images/users/";
-    public static final String kegiatan_imageUrl = "http://192.168.100.9/mapen/assets/document/kegiatan/photo/";
-    public static final String profil_keahlianUrl = "http://192.168.100.9/mapen/assets/document/users/";
+//    private static final String url = "http://192.168.100.12/mapen/index.php/";
+//    public static final String imageUrl = "http://192.168.100.12/mapen/assets/images/users/";
+//    public static final String kegiatan_imageUrl = "http://192.168.100.12/mapen/assets/document/kegiatan/photo/";
+//    public static final String profil_keahlianUrl = "http://192.168.100.12/mapen/assets/document/users/";
 
     // Umum
 //    private static final String url = "http://192.168.67.250/mapen/index.php/";
@@ -20,10 +20,10 @@ public class ApiClient {
 //    public static final String profil_keahlianUrl = "http://192.168.67.250/mapen/assets/document/users/";
 
     // CoE
-//    private static final String url = "http://192.168.34.111/mapen/index.php/";
-//    public static final String imageUrl = "http://192.168.34.111/mapen/assets/images/users/";
-//    public static final String kegiatan_imageUrl = "http://192.168.34.111/mapen/assets/document/kegiatan/photo/";
-//    public static final String profil_keahlianUrl = "http://192.168.34.111/mapen/assets/document/users/";
+    private static final String url = "http://192.168.35.141/mapen/index.php/";
+    public static final String imageUrl = "http://192.168.35.141/mapen/assets/images/users/";
+    public static final String kegiatan_imageUrl = "http://192.168.35.141/mapen/assets/document/kegiatan/photo/";
+    public static final String profil_keahlianUrl = "http://192.168.35.141/mapen/assets/document/users/";
 
     private static ApiClient clientObject;
     private static Retrofit retrofit;
@@ -31,6 +31,7 @@ public class ApiClient {
     public static final int REQUEST_PICK_FILE = 3;
     public static final int REQUEST_WRITE_PERMISSION = 786;
     public static final int PERMISSION_REQUEST_STORAGE = 4;
+    public static final int PERMISSION_REQUEST_LOCATION = 101;
 
     private static Retrofit getRetrofit(){
 
@@ -130,6 +131,24 @@ public class ApiClient {
     public static MapenService getTabelskpService(){
         MapenService tabelskpService = getRetrofit().create(MapenService.class);
         return tabelskpService;
+    }
+
+    // Metode Kerja Presensi
+    public static MapenService getMetodeKerjaService(){
+        MapenService metodeKerjaService = getRetrofit().create(MapenService.class);
+        return metodeKerjaService;
+    }
+
+    // Riwayat Presensi
+    public static MapenService getRiwayatPresensiService(){
+        MapenService riwayatPresensiService = getRetrofit().create(MapenService.class);
+        return riwayatPresensiService;
+    }
+
+    // Presensi
+    public static MapenService getPresensiService(){
+        MapenService presensiService = getRetrofit().create(MapenService.class);
+        return presensiService;
     }
 
     public static synchronized ApiClient getInstance()

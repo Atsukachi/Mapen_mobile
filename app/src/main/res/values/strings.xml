@@ -177,5 +177,9 @@
     <string name="lbl_tanpa_skp">Tanpa SKP</string>
     <string name="lbl_dengan_skp">Dengan SKP</string>
     <string name="lbl_edit_logkeg">Edit Log Kegiatan</string>
+    <string name="icon_jamdatang">icon_jamdatang</string>
+    <string name="icon_jampulang">icon_jampulang</string>
+    <string name="icon_presensi">icon_presensi</string>
+    <string name="icon_tabelpresensi">icon_tabelpresensi</string>
 
 </resources>

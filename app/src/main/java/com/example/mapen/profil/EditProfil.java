@@ -53,7 +53,7 @@ public class EditProfil extends AppCompatActivity implements View.OnClickListene
     EditText ep_email, ep_alamat, ep_telephone;
     LinearLayout btn_save_ep, btn_uploadkegiatan_ep;
     SharedPreferences sp;
-    String imageNew, keahlianNew, imageUser, getUrl, idUser, dialogTitle, dialogMessage, alamat, keahlian, telephone, edit_email, edit_alamat, edit_telephone, edit_keahlian;
+    String imageNew, newImage, keahlianNew, imageUser, getUrl, idUser, dialogTitle, dialogMessage, alamat, keahlian, telephone, edit_email, edit_alamat, edit_telephone, edit_keahlian;
     CircleImageView userImage;
     ScrollView scrollView;
     MultipartBody.Part partImage, partKeahlian;
@@ -112,7 +112,8 @@ public class EditProfil extends AppCompatActivity implements View.OnClickListene
                     cursor = getContentResolver().query(imageUri, null, null, null, null);
                     assert cursor != null;
                     cursor.moveToFirst();
-                    imageNew = cursor.getString(cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME));
+                    newImage = cursor.getString(cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME));
+                    Log.d("newImage", newImage);
                     cursor.close();
 
                     userImage.setImageURI(imageUri);
@@ -268,6 +269,8 @@ public class EditProfil extends AppCompatActivity implements View.OnClickListene
             requestFoto = RequestBody.create(MediaType.parse("multipart/form-file"), imageFile);
             partImage = MultipartBody.Part.createFormData("image", imageFile.getName(), requestFoto);
             imageNew = imageFile.getName();
+            imageNew = imageNew.replace(" ", "_");
+            Log.d("imageNew", imageNew);
             requestUser_id = RequestBody.create(MediaType.parse("text/plain"), idUser);
 
             Call<EditProfilResponse> call = ApiClient
@@ -367,18 +370,18 @@ public class EditProfil extends AppCompatActivity implements View.OnClickListene
         dialogTitle = "Edit Profil";
         dialogMessage = "Apakah Anda ingin memperbarui data tanpa mengubah file keahlian?";
 
-        alertDialogBuilder = new AlertDialog.Builder(this);
+        alertDialogBuilder = new AlertDialog.Builder(this, R.style.AlertDialogTheme);
         alertDialogBuilder.setTitle(dialogTitle);
         alertDialogBuilder.setMessage(dialogMessage);
         alertDialogBuilder
-                .setPositiveButton(Html.fromHtml("<font color='#000000'>Yes</font>"), new DialogInterface.OnClickListener() {
+                .setPositiveButton(("Yes"), new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int i) {
                         updateTanpaKeahlianProfil();
                         dialog.dismiss();
                     }
                 })
-                .setNegativeButton(Html.fromHtml("<font color='#000000'>No</font>"), new DialogInterface.OnClickListener() {
+                .setNegativeButton(("No"), new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int i) {
                         dialog.cancel();
                         dialog.dismiss();

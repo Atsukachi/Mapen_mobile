@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
 import com.example.mapen.fragment.KegiatanFragment;
+import com.example.mapen.fragment.PresensiFragment;
 import com.example.mapen.fragment.ProfilFragment;
 import com.example.mapen.fragment.SKPFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -83,7 +84,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     }
 
     SKPFragment skp_fragment = new SKPFragment();
-    WaktuPresensiFragment waktupresensi_fragment = new WaktuPresensiFragment();
+    PresensiFragment presensi_fragment = new PresensiFragment();
     KegiatanFragment kegiatan_fragment = new KegiatanFragment();
     ProfilFragment profil_fragment = new ProfilFragment();
 
@@ -102,7 +103,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
                 getSupportFragmentManager()
                         .beginTransaction()
                         .setCustomAnimations(R.anim.fade_in, R.anim.fade_out)
-                        .replace(R.id.container, waktupresensi_fragment)
+                        .replace(R.id.container, presensi_fragment)
                         .commit();
                 return true;
 
