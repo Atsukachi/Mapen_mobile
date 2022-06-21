@@ -75,7 +75,7 @@ public interface MapenService {
     );
 
     // SKP
-    @GET("C_Table/skp")
+    @GET("C_Pengajuanskp/data")
     Call<List<TabelskpResponse>> userid_skp(
             @Query("user_id") String user_id
     );
@@ -168,5 +168,10 @@ public interface MapenService {
             @Part("kerja") RequestBody kerja,
             @Part("lat") RequestBody lat,
             @Part("lng") RequestBody lng
+    );
+
+    @GET("C_Presensi/data")
+    Call<List<TabelPresensiResponse>> getPresensi(
+            @Query("user_id") String user_id
     );
 }

@@ -63,7 +63,6 @@ public class PengajuanSKP extends AppCompatActivity implements View.OnClickListe
     }
 
     private void initComponents() {
-        skp_user_nama = findViewById(R.id.txtUserNamaPengajuanSKP);
         skp_tahun = findViewById(R.id.txtTahunPengajuanSKP);
         skp_nama = findViewById(R.id.txtNamaPengajuanSKP);
 
@@ -80,7 +79,6 @@ public class PengajuanSKP extends AppCompatActivity implements View.OnClickListe
 
     private void getDataBulan() {
         sp = getSharedPreferences("user_detail",MODE_PRIVATE);
-        skp_user_nama.setText(sp.getString("name", ""));
 
         if(sp.contains("user_id")) {
             Call<List<GetBulanResponse>> bulanCall = ApiClient

@@ -183,12 +183,13 @@ public class LogKegiatan extends AppCompatActivity implements View.OnClickListen
                         SKPlist = new ArrayList<String>();
                         IDSKPlist = new ArrayList<String>();
 
+                        SKPlist.addAll(listdataSKP);
+                        IDSKPlist.addAll(listdataIDSKP);
+
                         for (int i = 0; i < obj.size(); i++) {
-                            SKPlist.addAll(listdataSKP);
                             SKPlist.addAll(Arrays.asList(obj.get(i).getNama_skp()));
                             Log.d("skplist", String.valueOf(SKPlist));
 
-                            IDSKPlist.addAll(listdataIDSKP);
                             IDSKPlist.addAll(Arrays.asList(obj.get(i).getId_skp()));
                             Log.d("idskplist", String.valueOf(IDSKPlist));
                         }

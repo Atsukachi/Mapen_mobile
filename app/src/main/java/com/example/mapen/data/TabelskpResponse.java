@@ -3,13 +3,14 @@ package com.example.mapen.data;
 import java.io.Serializable;
 
 public class TabelskpResponse implements Serializable {
-    String id_skp, user, tahun, nama_skp, nilai, cek_validasi, nama_bulan, jml_kegiatan;
+    String id_skp, user, tahun, nama_skp, nama_skp_limit, nilai, cek_validasi, nama_bulan, jml_kegiatan;
 
-    public TabelskpResponse(String id_skp, String user, String tahun, String nama_skp, String nilai, String cek_validasi, String nama_bulan, String jml_kegiatan) {
+    public TabelskpResponse(String id_skp, String user, String tahun, String nama_skp, String nama_skp_limit, String nilai, String cek_validasi, String nama_bulan, String jml_kegiatan) {
         this.id_skp = id_skp;
         this.user = user;
         this.tahun = tahun;
         this.nama_skp = nama_skp;
+        this.nama_skp_limit = nama_skp_limit;
         this.nilai = nilai;
         this.cek_validasi = cek_validasi;
         this.nama_bulan = nama_bulan;
@@ -46,6 +47,14 @@ public class TabelskpResponse implements Serializable {
 
     public void setNama_skp(String nama_skp) {
         this.nama_skp = nama_skp;
+    }
+
+    public String getNama_skp_limit() {
+        return nama_skp_limit;
+    }
+
+    public void setNama_skp_limit(String nama_skp_limit) {
+        this.nama_skp_limit = nama_skp_limit;
     }
 
     public String getNilai() {
@@ -87,6 +96,7 @@ public class TabelskpResponse implements Serializable {
                 ", user='" + user + '\'' +
                 ", tahun='" + tahun + '\'' +
                 ", nama_skp='" + nama_skp + '\'' +
+                ", nama_skp_limit='" + nama_skp_limit + '\'' +
                 ", nilai='" + nilai + '\'' +
                 ", cek_validasi='" + cek_validasi + '\'' +
                 ", nama_bulan='" + nama_bulan + '\'' +

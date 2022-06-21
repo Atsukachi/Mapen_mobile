@@ -8,22 +8,19 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class ApiClient {
 
     // Rumah
-//    private static final String url = "http://192.168.100.12/mapen/index.php/";
-//    public static final String imageUrl = "http://192.168.100.12/mapen/assets/images/users/";
-//    public static final String kegiatan_imageUrl = "http://192.168.100.12/mapen/assets/document/kegiatan/photo/";
-//    public static final String profil_keahlianUrl = "http://192.168.100.12/mapen/assets/document/users/";
+//    public static final String ip = "http://192.168.100.12/";
 
     // Umum
-//    private static final String url = "http://192.168.67.250/mapen/index.php/";
-//    public static final String imageUrl = "http://192.168.67.250/mapen/assets/images/users/";
-//    public static final String kegiatan_imageUrl = "http://192.168.67.250/mapen/assets/document/kegiatan/photo/";
-//    public static final String profil_keahlianUrl = "http://192.168.67.250/mapen/assets/document/users/";
+//    public static final String ip = "ttp://192.168.43.187/";
 
     // CoE
-    private static final String url = "http://192.168.35.141/mapen/index.php/";
-    public static final String imageUrl = "http://192.168.35.141/mapen/assets/images/users/";
-    public static final String kegiatan_imageUrl = "http://192.168.35.141/mapen/assets/document/kegiatan/photo/";
-    public static final String profil_keahlianUrl = "http://192.168.35.141/mapen/assets/document/users/";
+    public static final String ip = "http://192.168.35.128/";
+
+    private static final String url = ip + "mapen/index.php/";
+    public static final String imageUrl = ip + "mapen/assets/images/users/";
+    public static final String kegiatan_imageUrl = ip + "mapen/assets/document/kegiatan/photo/";
+    public static final String foto_presensiUrl = ip + "mapen/assets/images/presensi/";
+    public static final String profil_keahlianUrl = ip + "mapen/assets/document/users/";
 
     private static ApiClient clientObject;
     private static Retrofit retrofit;
@@ -149,6 +146,12 @@ public class ApiClient {
     public static MapenService getPresensiService(){
         MapenService presensiService = getRetrofit().create(MapenService.class);
         return presensiService;
+    }
+
+    // Tabel Presensi
+    public static MapenService getTabelPresensiService(){
+        MapenService tabelpresensiService = getRetrofit().create(MapenService.class);
+        return tabelpresensiService;
     }
 
     public static synchronized ApiClient getInstance()

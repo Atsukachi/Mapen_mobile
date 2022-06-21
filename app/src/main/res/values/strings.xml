@@ -181,5 +181,13 @@
     <string name="icon_jampulang">icon_jampulang</string>
     <string name="icon_presensi">icon_presensi</string>
     <string name="icon_tabelpresensi">icon_tabelpresensi</string>
+    <string name="lbl_date">Date</string>
+    <string name="lbl_latitude">Latitude</string>
+    <string name="lbl_longitude">Longitude</string>
+    <string name="lbl_cek_presensi">Cek Presensi</string>
+    <string name="slash">/</string>
+    <string name="lbl_detail">Detail</string>
+    <string name="lbl_detail_skp">Detail SKP</string>
+    <string name="lbl_detail_kegiatan">Detail Kegiatan</string>
 
 </resources>

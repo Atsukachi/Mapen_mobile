@@ -24,6 +24,19 @@
         <item name="android:textColor">@color/cyan_300</item>
     </style>
 
+    <style name="txtMontserratbold18" parent="txtMontserratbold24_1">
+        <item name="android:textSize">@dimen/_18pxh</item>
+    </style>
+    <style name="txtMontserratbold18_1" parent="txtMontserratbold18">
+        <item name="android:textColor">@color/cyan_300</item>
+    </style>
+    <style name="txtMontserratbold18_2" parent="txtMontserratbold18">
+        <item name="android:textColor">@color/teal_400</item>
+    </style>
+    <style name="txtMontserratbold18_3" parent="txtMontserratbold18">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
     <style name="txtMontserratbold16" parent="Montserratbold">
         <item name="android:textSize">@dimen/_16pxh</item>
         <item name="android:textColor">@color/white</item>
@@ -98,7 +111,7 @@
     </style>
 
     <style name="btnSolidRounded">
-        <item name="android:textSize">@dimen/_20pxh</item>
+        <item name="android:textSize">@dimen/_18pxh</item>
         <item name="android:textColor">@color/white</item>
         <item name="android:fontFamily">@font/montserratbold700</item>
         <item name="android:textFontWeight" tools:targetApi="p">700</item>
@@ -117,13 +130,13 @@
     <style name="groupStyleteal_1">
         <item name="android:background">@drawable/rectangle_bg_teal_400_radius_15</item>
     </style>
-    <style name="groupStyleteal_400cornerRadius" parent="txtMontserratbold20_2">
+    <style name="groupStyleteal_400cornerRadius" parent="txtMontserratbold18_3">
         <item name="android:background">@drawable/rectangle_bg_teal_400_radius_15</item>
     </style>
     <style name="groupStyleteal_400cornerRadius_2" parent="txtMontserratbold16">
         <item name="android:background">@drawable/rectangle_bg_teal_400_radius_15</item>
     </style>
-    <style name="groupStylegreen_400cornerRadius">
+    <style name="groupStylegreen_400cornerRadius" parent="txtMontserratbold18_3">
         <item name="android:background">@drawable/rectangle_bg_green_400_radius_15</item>
     </style>
     <style name="groupStylegreen_400cornerRadius_2">
@@ -138,7 +151,7 @@
     <style name="txtSolidRoundedOutline" parent="txtMontserratbold20_1">
         <item name="android:background">@drawable/rectangle_bg_gray_400_border_black_900_radius_25</item>
     </style>
-    <style name="txtSolidRoundedOutline_1" parent="txtMontserratbold20_1">
+    <style name="txtSolidRoundedOutline_1" parent="txtMontserratbold16_2">
         <item name="android:background">@drawable/rectangle_bg_white_a700_border_black_900_radius_25</item>
     </style>
     <style name="txtSolidOutline_1" parent="txtMontserratbold24_1">

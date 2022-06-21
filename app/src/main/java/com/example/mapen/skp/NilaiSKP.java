@@ -46,6 +46,7 @@ public class NilaiSKP extends AppCompatActivity implements View.OnClickListener 
         intent = getIntent();
         if(intent.getExtras() != null){
             tabelskpResponse = (TabelskpResponse) intent.getSerializableExtra("data_nilai_skp");
+            Log.d("data_nilai_skp", String.valueOf(tabelskpResponse));
             if (tabelskpResponse != null){
                 id_nilaiSKP = tabelskpResponse.getId_skp();
                 nama_nilaiSKP = tabelskpResponse.getNama_skp();

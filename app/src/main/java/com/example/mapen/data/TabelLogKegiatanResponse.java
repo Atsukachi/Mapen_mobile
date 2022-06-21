@@ -4,53 +4,22 @@ import java.io.Serializable;
 
 public class TabelLogKegiatanResponse implements Serializable {
     int unitkerja, skp, user, file_categories;
-    String tanggal, kegiatan_id, uraian, file, id, extension, nama_unit_kerja, nama_skp;
+    String tanggal, kegiatan_id, uraian, file, id, extension, nama_unit_kerja, nama_skp, nama_skp_limit;
 
-    public TabelLogKegiatanResponse(int unitkerja, int skp, int user, int file_categories, String kegiatan_id, String uraian, String file, String tanggal, String id, String extension, String nama_unit_kerja, String nama_skp) {
+    public TabelLogKegiatanResponse(int unitkerja, int skp, int user, int file_categories, String tanggal, String kegiatan_id, String uraian, String file, String id, String extension, String nama_unit_kerja, String nama_skp, String nama_skp_limit) {
         this.unitkerja = unitkerja;
         this.skp = skp;
         this.user = user;
         this.file_categories = file_categories;
+        this.tanggal = tanggal;
         this.kegiatan_id = kegiatan_id;
         this.uraian = uraian;
         this.file = file;
-        this.tanggal = tanggal;
         this.id = id;
         this.extension = extension;
         this.nama_unit_kerja = nama_unit_kerja;
         this.nama_skp = nama_skp;
-    }
-
-    public String getNama_skp() {
-        return nama_skp;
-    }
-
-    public void setNama_skp(String nama_skp) {
-        this.nama_skp = nama_skp;
-    }
-
-    public String getExtension() {
-        return extension;
-    }
-
-    public void setExtension(String extension) {
-        this.extension = extension;
-    }
-
-    public String getNama_unit_kerja() {
-        return nama_unit_kerja;
-    }
-
-    public void setNama_unit_kerja(String nama_unit_kerja) {
-        this.nama_unit_kerja = nama_unit_kerja;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
+        this.nama_skp_limit = nama_skp_limit;
     }
 
     public int getUnitkerja() {
@@ -85,6 +54,14 @@ public class TabelLogKegiatanResponse implements Serializable {
         this.file_categories = file_categories;
     }
 
+    public String getTanggal() {
+        return tanggal;
+    }
+
+    public void setTanggal(String tanggal) {
+        this.tanggal = tanggal;
+    }
+
     public String getKegiatan_id() {
         return kegiatan_id;
     }
@@ -109,12 +86,44 @@ public class TabelLogKegiatanResponse implements Serializable {
         this.file = file;
     }
 
-    public String getTanggal() {
-        return tanggal;
+    public String getId() {
+        return id;
     }
 
-    public void setTanggal(String tanggal) {
-        this.tanggal = tanggal;
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getExtension() {
+        return extension;
+    }
+
+    public void setExtension(String extension) {
+        this.extension = extension;
+    }
+
+    public String getNama_unit_kerja() {
+        return nama_unit_kerja;
+    }
+
+    public void setNama_unit_kerja(String nama_unit_kerja) {
+        this.nama_unit_kerja = nama_unit_kerja;
+    }
+
+    public String getNama_skp() {
+        return nama_skp;
+    }
+
+    public void setNama_skp(String nama_skp) {
+        this.nama_skp = nama_skp;
+    }
+
+    public String getNama_skp_limit() {
+        return nama_skp_limit;
+    }
+
+    public void setNama_skp_limit(String nama_skp_limit) {
+        this.nama_skp_limit = nama_skp_limit;
     }
 
     @Override
@@ -124,11 +133,15 @@ public class TabelLogKegiatanResponse implements Serializable {
                 ", skp=" + skp +
                 ", user=" + user +
                 ", file_categories=" + file_categories +
+                ", tanggal='" + tanggal + '\'' +
                 ", kegiatan_id='" + kegiatan_id + '\'' +
                 ", uraian='" + uraian + '\'' +
                 ", file='" + file + '\'' +
                 ", id='" + id + '\'' +
-                ", tanggal=" + tanggal +
+                ", extension='" + extension + '\'' +
+                ", nama_unit_kerja='" + nama_unit_kerja + '\'' +
+                ", nama_skp='" + nama_skp + '\'' +
+                ", nama_skp_limit='" + nama_skp_limit + '\'' +
                 '}';
     }
 }

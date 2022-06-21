@@ -75,7 +75,6 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_tabelskp"
                 android:layout_margin="@dimen/_20pxh"
-                android:padding="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
         </ScrollView>

@@ -87,7 +87,7 @@ public class TabelLogKegiatan extends AppCompatActivity implements LogKegiatanAd
     }
 
     @Override
-    public void ClickedEdit(TabelLogKegiatanResponse tabelLogKegiatanResponse) {
-        startActivity(new Intent(this, EditLogKegiatan.class).putExtra("data_edit_logkeg",tabelLogKegiatanResponse));
+    public void ClickedDetail(TabelLogKegiatanResponse tabelLogKegiatanResponse) {
+        startActivity(new Intent(this, DetailLogKegiatan.class).putExtra("data_detail_logkeg", tabelLogKegiatanResponse));
     }
 }

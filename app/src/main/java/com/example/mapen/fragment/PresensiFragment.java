@@ -15,6 +15,7 @@ import com.example.mapen.R;
 import com.example.mapen.kegiatan.TabelLogKegiatan;
 import com.example.mapen.kegiatan.LogKegiatan;
 import com.example.mapen.presensi.Presensi;
+import com.example.mapen.presensi.TabelPresensi;
 import com.example.mapen.presensi.WaktuPresensi;
 
 public class PresensiFragment extends Fragment implements View.OnClickListener {
@@ -45,7 +46,7 @@ public class PresensiFragment extends Fragment implements View.OnClickListener {
                 startActivity(presensi);
                 break;
             case R.id.btn_tabelpresensi:
-                Intent tabelpresensi = new Intent(getActivity(), TabelLogKegiatan.class);
+                Intent tabelpresensi = new Intent(getActivity(), TabelPresensi.class);
                 startActivity(tabelpresensi);
                 break;
         }

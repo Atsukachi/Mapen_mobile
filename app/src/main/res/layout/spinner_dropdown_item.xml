@@ -2,7 +2,7 @@
 <CheckedTextView
     android:padding="@dimen/_20pxh"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    style="@style/txtMontserratbold20"
+    style="@style/txtMontserratbold16_3"
     android:singleLine="true"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"

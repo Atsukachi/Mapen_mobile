@@ -49,7 +49,7 @@ public class EditProfil extends AppCompatActivity implements View.OnClickListene
     AlertDialog alertDialog;
     ImageView btn_back;
     FloatingActionButton editfoto_fab;
-    TextView upload_foto, ep_nama, ep_keahlian;
+    TextView ep_nama, ep_keahlian;
     EditText ep_email, ep_alamat, ep_telephone;
     LinearLayout btn_save_ep, btn_uploadkegiatan_ep;
     SharedPreferences sp;

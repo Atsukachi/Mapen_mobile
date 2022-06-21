@@ -37,7 +37,7 @@
                     android:layout_width="wrap_content"
                     android:singleLine="true"
                     android:text="@string/lbl_sign_in"
-                    style="@style/txtMontserratbold20_2" />
+                    style="@style/txtMontserratbold18_3" />
 
                 <TextView
                     android:textAlignment="center"
@@ -60,7 +60,7 @@
                         android:layout_width="wrap_content"
                         android:singleLine="true"
                         android:text="@string/lbl_email"
-                        style="@style/txtMontserratbold20_2" />
+                        style="@style/txtMontserratbold18_3" />
 
                     <EditText
                         android:labelFor="@id/txtEmailLogin"
@@ -90,7 +90,7 @@
                         android:layout_width="wrap_content"
                         android:singleLine="true"
                         android:text="@string/lbl_password"
-                        style="@style/txtMontserratbold20_2" />
+                        style="@style/txtMontserratbold18_3" />
 
                     <EditText
                         android:labelFor="@id/txtPasswordLogin"

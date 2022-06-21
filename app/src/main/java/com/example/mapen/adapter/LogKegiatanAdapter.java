@@ -32,12 +32,8 @@ public class LogKegiatanAdapter extends RecyclerView.Adapter<LogKegiatanAdapter.
     private List<TabelLogKegiatanResponse> tabelLogKegiatanResponseList;
     private Context context;
     private final LogKegiatanAdapter.ClickedItem clickedItem;
-    String tanggal, id_kegiatan, nama_skp, id, uraian, file, getUrl, imageFile, tgl, extension, nama_unit_kerja, uraianLK, regex;
+    String tanggal, id_kegiatan, nama_skp, nama_skp_limit, id, uraian, file, getUrl, imageFile, tgl, extension, nama_unit_kerja, uraianLK, regex;
     int unitkerja, skp, user, file_categories;
-    Context mContext;
-    SharedPreferences sp;
-    DateFormat format;
-    Date date;
 
     public LogKegiatanAdapter(LogKegiatanAdapter.ClickedItem clickedItem) {
         this.clickedItem = clickedItem;
@@ -69,6 +65,7 @@ public class LogKegiatanAdapter extends RecyclerView.Adapter<LogKegiatanAdapter.
         uraianLK = uraian.replaceAll("<p>|</p>", "");
         skp = tabelLogKegiatanResponse.getSkp();
         nama_skp = tabelLogKegiatanResponse.getNama_skp();
+        nama_skp_limit = tabelLogKegiatanResponse.getNama_skp_limit();
         user = tabelLogKegiatanResponse.getUser();
         tanggal = tabelLogKegiatanResponse.getTanggal();
         file = tabelLogKegiatanResponse.getFile();
@@ -76,48 +73,19 @@ public class LogKegiatanAdapter extends RecyclerView.Adapter<LogKegiatanAdapter.
         extension = tabelLogKegiatanResponse.getExtension();
         nama_unit_kerja = tabelLogKegiatanResponse.getNama_unit_kerja();
 
-        holder.kegiatan_idVH.setText(id_kegiatan);
-        holder.unitkerjaVH.setText(nama_unit_kerja);
-        holder.uraianVH.setText(uraianLK);
-        holder.skpVH.setText(nama_skp);
-        holder.tanggalVH.setText(tanggal);
-        holder.fileVH.setText(file);
+        holder.skp_lkVH.setText(nama_skp_limit);
+        holder.tanggal_lkVH.setText(tanggal);
 
-        getUrl = ApiClient.kegiatan_imageUrl;
-        imageFile = getUrl + file;
-
-        if(file_categories == 1) {
-            Glide.with(context)
-                    .load(imageFile)
-                    .apply(new RequestOptions().override(300, 300))
-                    .centerCrop()
-                    .into(holder.file_categoriesVH);
-        } else if (file_categories == 2) {
-            holder.file_categoriesVH.setImageResource(R.drawable.video);
-        } else if (file_categories == 3) {
-            holder.file_categoriesVH.setImageResource(R.drawable.word);
-        } else if (file_categories == 4) {
-            holder.file_categoriesVH.setImageResource(R.drawable.excel);
-        } else if (file_categories == 5) {
-            holder.file_categoriesVH.setImageResource(R.drawable.powerpoint);
-        } else if (file_categories == 6) {
-            holder.file_categoriesVH.setImageResource(R.drawable.pdf);
-        } else if (file_categories == 7) {
-            holder.file_categoriesVH.setImageResource(R.drawable.library);
-        } else {
-            holder.file_categoriesVH.setImageResource(R.drawable.notfound);
-        }
-
-        holder.btn_editlogkegVH.setOnClickListener(new View.OnClickListener() {
+        holder.btn_detail_lkVH.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                clickedItem.ClickedEdit(tabelLogKegiatanResponse);
+                clickedItem.ClickedDetail(tabelLogKegiatanResponse);
             }
         });
     }
 
     public interface ClickedItem{
-        void ClickedEdit(TabelLogKegiatanResponse tabelLogKegiatanResponse);
+        void ClickedDetail(TabelLogKegiatanResponse tabelLogKegiatanResponse);
     }
 
     @Override
@@ -126,25 +94,15 @@ public class LogKegiatanAdapter extends RecyclerView.Adapter<LogKegiatanAdapter.
     }
 
     public class AdapterLogKeg_vh extends RecyclerView.ViewHolder {
-        TextView kegiatan_idVH;
-        TextView unitkerjaVH;
-        TextView uraianVH;
-        TextView skpVH;
-        TextView tanggalVH;
-        TextView fileVH;
-        ImageView file_categoriesVH;
-        LinearLayout btn_editlogkegVH;
+        TextView skp_lkVH;
+        TextView tanggal_lkVH;
+        LinearLayout btn_detail_lkVH;
 
         public AdapterLogKeg_vh(@NonNull View itemView) {
             super(itemView);
-            kegiatan_idVH = itemView.findViewById(R.id.txtKegiatanID_lk);
-            unitkerjaVH = itemView.findViewById(R.id.txtUnitKerja_lk);
-            uraianVH = itemView.findViewById(R.id.txtUraian_lk);
-            skpVH = itemView.findViewById(R.id.txtSKP_lk);
-            tanggalVH = itemView.findViewById(R.id.txtTanggal_lk);
-            fileVH = itemView.findViewById(R.id.txtFile_lk);
-            file_categoriesVH = itemView.findViewById(R.id.txtFileCategories_lk);
-            btn_editlogkegVH = itemView.findViewById(R.id.btn_edit_tabellogkeg);
+            skp_lkVH = itemView.findViewById(R.id.txtSKP_lk);
+            tanggal_lkVH = itemView.findViewById(R.id.txtTanggal_lk);
+            btn_detail_lkVH = itemView.findViewById(R.id.btn_detail_tabellogkegiatan);
         }
     }
 }

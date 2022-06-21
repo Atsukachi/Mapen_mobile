@@ -60,7 +60,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:orientation="vertical">
 
                 <LinearLayout
@@ -84,8 +84,8 @@
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
                             <TextView
+                                android:layout_marginEnd="@dimen/_50pxh"
                                 android:gravity="center_vertical"
-                                android:layout_column="1"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="@string/lbl_nama"
@@ -93,6 +93,7 @@
                             <TextView
                                 android:id="@+id/txtNamaProfil"
                                 android:layout_width="wrap_content"
+                                android:layout_column="1"
                                 android:layout_weight="1"
                                 android:layout_height="wrap_content"
                                 style="@style/txtMontserratbold16_3"/>
@@ -105,8 +106,8 @@
                             android:orientation="horizontal"
                             android:layout_marginTop="@dimen/_20pxh">
                             <TextView
+                                android:layout_marginEnd="@dimen/_50pxh"
                                 android:gravity="center_vertical"
-                                android:layout_column="1"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="@string/lbl_email"
@@ -114,6 +115,7 @@
                             <TextView
                                 android:id="@+id/txtEmailProfil"
                                 android:layout_width="wrap_content"
+                                android:layout_column="1"
                                 android:layout_weight="1"
                                 android:layout_height="wrap_content"
                                 style="@style/txtMontserratbold16_3"/>
@@ -126,7 +128,7 @@
                             android:orientation="horizontal"
                             android:layout_marginTop="@dimen/_20pxh">
                             <TextView
-                                android:layout_column="1"
+                                android:layout_marginEnd="@dimen/_50pxh"
                                 android:gravity="center_vertical"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
@@ -135,6 +137,7 @@
                             <TextView
                                 android:id="@+id/txtAlamatProfil"
                                 android:layout_width="0dp"
+                                android:layout_column="1"
                                 android:layout_weight="1"
                                 android:layout_height="match_parent"
                                 style="@style/txtMontserratbold16_3"/>
@@ -147,13 +150,12 @@
                             android:orientation="horizontal"
                             android:layout_marginTop="@dimen/_20pxh">
                             <TextView
+                                android:layout_marginEnd="@dimen/_50pxh"
                                 android:gravity="center_vertical"
-                                android:layout_column="1"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="@string/lbl_telepon"
                                 style="@style/txtMontserratbold16_2"/>
-
                             <LinearLayout
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -178,7 +180,7 @@
                             android:orientation="horizontal"
                             android:layout_marginTop="@dimen/_20pxh">
                             <TextView
-                                android:layout_column="1"
+                                android:layout_marginEnd="@dimen/_50pxh"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:text="@string/lbl_keahlian"
@@ -186,7 +188,7 @@
                             <TextView
                                 android:id="@+id/txtKeahlianProfil"
                                 android:layout_width="0dp"
-                                android:layout_weight="1"
+                                android:layout_column="1"
                                 android:layout_height="match_parent"
                                 style="@style/txtMontserratbold16_3"/>
                         </TableRow>

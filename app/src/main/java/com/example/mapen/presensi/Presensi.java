@@ -46,6 +46,7 @@ import com.example.mapen.data.UnitKerjaResponse;
 import com.example.mapen.kegiatan.EditLogKegiatan;
 import com.example.mapen.kegiatan.LogKegiatan;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.OutputStream;
@@ -72,12 +73,13 @@ public class Presensi extends AppCompatActivity implements View.OnClickListener 
     MapenService serviceAPI;
     String[] listIdMetodeKerja, listNamaMetodekerja, listRiwayatPresensi, listStatusPresensi;
     Spinner spinnerMetodeKerja;
-    String getTime, user_id, idriwayat, idstatus, riwayat, status, idmetodekerja, namametodekerja, extStorageDirectory, fileName, fotoName, fotoPath, riwayatPresensi, statusPresensi;
+    String pathFoto, getTime, user_id, idriwayat, idstatus, riwayat, status, idmetodekerja, namametodekerja, extStorageDirectory, fileName, fotoName, fotoPath, riwayatPresensi, statusPresensi;
     int size;
     OutputStream outStream;
     Bitmap fotoBitmap;
     Bundle extras;
     File fotoFile, filePart;
+    Uri fotoUri;
     MultipartBody.Part fotoPart;
     double latitude, longitude;
     RequestBody userRequest, fotoRequest, riwayatRequest, statusRequest, kerjaRequest, latRequest, longRequest, cek_presensiRequest;
@@ -212,36 +214,36 @@ public class Presensi extends AppCompatActivity implements View.OnClickListener 
                 if (data != null) {
                     fotoBitmap = (Bitmap) data.getExtras().get("data");
                     ivFoto.setImageBitmap(fotoBitmap);
-                    fotoFile = saveBitmaptoFile(fotoBitmap);
+
+                    fotoUri = getImageUri(getApplicationContext(), fotoBitmap);
+                    fotoFile = new File(getRealPathFromURI(fotoUri));
                     Log.d("fotoFile", String.valueOf(fotoFile));
                 }
             }
         }
     }
 
-    private File saveBitmaptoFile(Bitmap fotoBitmap) {
-        extStorageDirectory = Environment.getExternalStorageDirectory().toString();
-        outStream = null;
+    private Uri getImageUri(Context context, Bitmap fotoBitmap) {
+        ByteArrayOutputStream bytes = new ByteArrayOutputStream();
+        fotoBitmap.compress(Bitmap.CompressFormat.JPEG, 100, bytes);
         getTime = String.valueOf(TimeUnit.MILLISECONDS.toSeconds(System.currentTimeMillis()));
         fileName = "image_" + getTime;
-        Log.d("fotoName", fileName);
-        fotoFile = new File(extStorageDirectory, fileName + ".png");
-        if (fotoFile.exists()) {
-            fotoFile.delete();
-            fotoFile = new File(extStorageDirectory, fileName + ".png");
-        }
+        fotoPath = MediaStore.Images.Media.insertImage(context.getContentResolver(), fotoBitmap, fileName, null);
+        return Uri.parse(fotoPath);
+    }
 
-        try {
-            outStream = new FileOutputStream(fotoFile);
-            fotoBitmap.compress(Bitmap.CompressFormat.PNG, 100, outStream);
-            outStream.flush();
-            outStream.close();
-
-        } catch (Exception e) {
-            e.printStackTrace();
-            return null;
+    private String getRealPathFromURI(Uri fotoUri) {
+        if (getContentResolver() != null) {
+            Cursor cursor = getContentResolver().query(fotoUri, null, null, null, null);
+            if (cursor != null) {
+                cursor.moveToFirst();
+                int idx = cursor.getColumnIndex(MediaStore.Images.ImageColumns.DATA);
+                pathFoto = cursor.getString(idx);
+                Log.d("pathFoto", pathFoto);
+                cursor.close();
+            }
         }
-        return fotoFile;
+        return pathFoto;
     }
 
     private void requestPermission() {

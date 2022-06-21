@@ -52,40 +52,40 @@ public class LoginActivity extends AppCompatActivity {
         call.enqueue(new Callback<LoginResponse>() {
             @Override
             public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
-                LoginResponse obj = response.body();
 
-                message = obj.getMessage();
-                user_id = obj.getUser_id();
-                role_id = obj.getRole_id();
-                email = obj.getEmail();
-                name = obj.getName();
-                image = obj.getImage();
-                alamat = obj.getAlamat();
-                keahlian = obj.getKeahlian();
-                telephone = obj.getTelephone();
+                if (response.isSuccessful()) {
+                    LoginResponse obj = response.body();
 
-                if(message.equals("failed"))
-                {
-                    login_email.setText("");
-                    login_pass.setText("");
-                }
+                    message = obj.getMessage();
+                    user_id = obj.getUser_id();
+                    role_id = obj.getRole_id();
+                    email = obj.getEmail();
+                    name = obj.getName();
+                    image = obj.getImage();
+                    alamat = obj.getAlamat();
+                    keahlian = obj.getKeahlian();
+                    telephone = obj.getTelephone();
 
-                if(message.equals("exist"))
-                {
-                    sp = getSharedPreferences("user_detail", MODE_PRIVATE);
-                    SharedPreferences.Editor editor = sp.edit();
-                    editor.putString("user_id", user_id);
-                    editor.putString("name", name);
-                    editor.putString("email", email);
-                    editor.putString("alamat", alamat);
-                    editor.putString("telephone", telephone);
-                    editor.putString("image", image);
-                    editor.putString("keahlian", keahlian);
-                    editor.putString("role_id", role_id);
-                    editor.commit();
-                    editor.apply();
-                    startActivity(new Intent(getApplicationContext(),MainActivity.class));
-                    finish();
+                    if (message.equals("exist"))
+                    {
+                        sp = getSharedPreferences("user_detail", MODE_PRIVATE);
+                        SharedPreferences.Editor editor = sp.edit();
+                        editor.putString("user_id", user_id);
+                        editor.putString("name", name);
+                        editor.putString("email", email);
+                        editor.putString("alamat", alamat);
+                        editor.putString("telephone", telephone);
+                        editor.putString("image", image);
+                        editor.putString("keahlian", keahlian);
+                        editor.putString("role_id", role_id);
+                        editor.commit();
+                        editor.apply();
+                        startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                        finish();
+                    }
+                } else {
+                    Toast.makeText(getApplicationContext(), "Email atau Password Salah", Toast.LENGTH_SHORT).show();
+                    login_email.requestFocus();
                 }
             }
 

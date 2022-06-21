@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    style="@style/txtMontserratbold20_1"
+    style="@style/txtMontserratbold16_2"
     android:paddingStart="@dimen/_25pxh"
     android:paddingTop="@dimen/_16pxv"
     android:paddingEnd="@dimen/_25pxh"

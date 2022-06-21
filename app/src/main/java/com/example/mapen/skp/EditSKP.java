@@ -57,6 +57,7 @@ public class EditSKP extends AppCompatActivity implements View.OnClickListener {
         intent = getIntent();
         if(intent.getExtras() != null){
             tabelskpResponse = (TabelskpResponse) intent.getSerializableExtra("data_edit_skp");
+            Log.d("data_edit_skp", String.valueOf(tabelskpResponse));
 
             sp = getSharedPreferences("user_detail",MODE_PRIVATE);
             user_nama_editSKP = sp.getString("name", "");
@@ -71,7 +72,6 @@ public class EditSKP extends AppCompatActivity implements View.OnClickListener {
             Toast.makeText(EditSKP.this, "List Data Not Found", Toast.LENGTH_SHORT).show();
         }
 
-        skp_nama.setText(user_nama_editSKP);
         skp_tahun.setText(tahun_editSKP);
         skp_nama_rincian.setText(nama_editSKP);
 
@@ -144,7 +144,6 @@ public class EditSKP extends AppCompatActivity implements View.OnClickListener {
         edit_pengajuan_skp_savebtn = findViewById(R.id.btn_save_pengajuanskp);
         edit_pengajuan_skp_savebtn.setOnClickListener(this);
 
-        skp_nama = findViewById(R.id.txtUserNamaPengajuanSKP);
         skp_tahun = findViewById(R.id.txtTahunPengajuanSKP);
         skp_nama_rincian = findViewById(R.id.txtNamaPengajuanSKP);
 

@@ -1,19 +1,19 @@
 package com.example.mapen.data;
 
 public class TabelPresensiResponse {
-    String tanggal, date, foto, lat, lng;
-    int user_id, riwayat, status, kerja, cek_presensi;
+    String tanggal, date, foto, lat, lng, riwayat, status, kerja;
+    int user_id, cek_presensi;
 
-    public TabelPresensiResponse(String tanggal, String date, String foto, String lat, String lng, int user_id, int riwayat, int status, int kerja, int cek_presensi) {
+    public TabelPresensiResponse(String tanggal, String date, String foto, String lat, String lng, String riwayat, String status, String kerja, int user_id, int cek_presensi) {
         this.tanggal = tanggal;
         this.date = date;
         this.foto = foto;
         this.lat = lat;
         this.lng = lng;
-        this.user_id = user_id;
         this.riwayat = riwayat;
         this.status = status;
         this.kerja = kerja;
+        this.user_id = user_id;
         this.cek_presensi = cek_presensi;
     }
 
@@ -57,36 +57,36 @@ public class TabelPresensiResponse {
         this.lng = lng;
     }
 
+    public String getRiwayat() {
+        return riwayat;
+    }
+
+    public void setRiwayat(String riwayat) {
+        this.riwayat = riwayat;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getKerja() {
+        return kerja;
+    }
+
+    public void setKerja(String kerja) {
+        this.kerja = kerja;
+    }
+
     public int getUser_id() {
         return user_id;
     }
 
     public void setUser_id(int user_id) {
         this.user_id = user_id;
-    }
-
-    public int getRiwayat() {
-        return riwayat;
-    }
-
-    public void setRiwayat(int riwayat) {
-        this.riwayat = riwayat;
-    }
-
-    public int getStatus() {
-        return status;
-    }
-
-    public void setStatus(int status) {
-        this.status = status;
-    }
-
-    public int getKerja() {
-        return kerja;
-    }
-
-    public void setKerja(int kerja) {
-        this.kerja = kerja;
     }
 
     public int getCek_presensi() {
@@ -105,10 +105,10 @@ public class TabelPresensiResponse {
                 ", foto='" + foto + '\'' +
                 ", lat='" + lat + '\'' +
                 ", lng='" + lng + '\'' +
+                ", riwayat='" + riwayat + '\'' +
+                ", status='" + status + '\'' +
+                ", kerja='" + kerja + '\'' +
                 ", user_id=" + user_id +
-                ", riwayat=" + riwayat +
-                ", status=" + status +
-                ", kerja=" + kerja +
                 ", cek_presensi=" + cek_presensi +
                 '}';
     }

@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:padding="20dp"
+        android:layout_marginVertical="@dimen/_5pxh"
+        android:layout_marginHorizontal="@dimen/_10pxh"
+        android:layout_height="wrap_content"
+        style="@style/groupStylewhite_A700cornerRadius"
+        android:orientation="vertical"
+        android:elevation="@dimen/_10pxh">
+
+        <!-- Tanggal -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/lbl_tanggal"
+                style="@style/txtMontserratbold16_2"/>
+            <TextView
+                android:id="@+id/txtTanggalPresensi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/txtMontserratbold20_3"/>
+        </LinearLayout>
+
+        <!-- Date -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="@dimen/_20pxh">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/lbl_date"
+                style="@style/txtMontserratbold16_2"/>
+            <TextView
+                android:id="@+id/txtDatePresensi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/txtMontserratbold20_3"/>
+        </LinearLayout>
+
+        <!-- Riwayat -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="@dimen/_20pxh">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/lbl_riwayat"
+                style="@style/txtMontserratbold16_2"/>
+            <TextView
+                android:id="@+id/txtRiwayatPresensi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/txtMontserratbold20_3"/>
+        </LinearLayout>
+
+        <!-- Status -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="@dimen/_20pxh">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/lbl_status"
+                style="@style/txtMontserratbold16_2"/>
+            <TextView
+                android:id="@+id/txtStatusPresensi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/txtMontserratbold20_3"/>
+        </LinearLayout>
+
+        <!-- Foto -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="@dimen/_20pxh">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/lbl_foto"
+                style="@style/txtMontserratbold16_2"/>
+            <ImageView
+                android:layout_marginTop="@dimen/_5pxh"
+                android:id="@+id/ivFotoPresensi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/notfound"/>
+        </LinearLayout>
+
+        <!-- Kerja -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="@dimen/_20pxh">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/lbl_metode_kerja"
+                style="@style/txtMontserratbold16_2"/>
+            <TextView
+                android:id="@+id/txtMetodeKerjaPresensi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/txtMontserratbold20_3"/>
+        </LinearLayout>
+
+        <!-- Latitude -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="@dimen/_20pxh">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/lbl_lokasi"
+                style="@style/txtMontserratbold16_2"/>
+            <TextView
+                android:id="@+id/txtLatitudePresensi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/lbl_latitude"
+                style="@style/txtMontserratbold20_3"/>
+            <TextView
+                android:id="@+id/txtLongitudePresensi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/lbl_longitude"
+                style="@style/txtMontserratbold20_3"/>
+        </LinearLayout>
+
+        <!-- Cek Presensi -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="@dimen/_20pxh">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/lbl_cek_presensi"
+                style="@style/txtMontserratbold16_2"/>
+            <TextView
+                android:id="@+id/txtCekPresensi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/txtMontserratbold20_3"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

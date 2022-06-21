@@ -99,7 +99,7 @@ public class EditLogKegiatan extends AppCompatActivity implements View.OnClickLi
         intent = getIntent();
         if(intent.getExtras() != null){
             tabelLogKegiatanResponse = (TabelLogKegiatanResponse) intent.getSerializableExtra("data_edit_logkeg");
-//            Log.d("tabellogkeg", String.valueOf(tabelLogKegiatanResponse));
+            Log.d("tabellogkeg", String.valueOf(tabelLogKegiatanResponse));
 
             sp = getSharedPreferences("user_detail",MODE_PRIVATE);
             user_nama_editLogKeg = sp.getString("name", "");
@@ -215,12 +215,13 @@ public class EditLogKegiatan extends AppCompatActivity implements View.OnClickLi
                         SKPlist = new ArrayList<String>();
                         IDSKPlist = new ArrayList<String>();
 
+                        SKPlist.addAll(listdataSKP);
+                        IDSKPlist.addAll(listdataIDSKP);
+
                         for (int i = 0; i < obj.size(); i++) {
-                            SKPlist.addAll(listdataSKP);
                             SKPlist.addAll(Arrays.asList(obj.get(i).getNama_skp()));
                             Log.d("skplist", String.valueOf(SKPlist));
-
-                            IDSKPlist.addAll(listdataIDSKP);
+                            
                             IDSKPlist.addAll(Arrays.asList(obj.get(i).getId_skp()));
                             Log.d("idskplist", String.valueOf(IDSKPlist));
                         }

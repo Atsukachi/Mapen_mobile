@@ -8,186 +8,103 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:padding="20dp"
-        android:layout_marginVertical="@dimen/_5pxh"
+        android:layout_marginVertical="@dimen/_10pxh"
         android:layout_marginHorizontal="@dimen/_10pxh"
         android:layout_height="wrap_content"
         style="@style/groupStylewhite_A700cornerRadius"
         android:orientation="vertical"
-        android:elevation="@dimen/_10pxh">
+        android:elevation="@dimen/_5pxh">
 
-        <!-- Kegiatan ID -->
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/lbl_kegiatan_id"
-                style="@style/txtMontserratbold16_2"/>
-            <TextView
-                android:id="@+id/txtKegiatanID_lk"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/lbl_mpnp1102220001"
-                style="@style/txtMontserratbold20_3"/>
-        </LinearLayout>
-
-        <!-- Unit Kerja -->
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginTop="@dimen/_20pxh">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/lbl_unit_kerja"
-                style="@style/txtMontserratbold16_2"/>
-            <TextView
-                android:id="@+id/txtUnitKerja_lk"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/lbl_rancangan_model"
-                style="@style/txtMontserratbold20_3"/>
-        </LinearLayout>
-
-        <!-- Uraian -->
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginTop="@dimen/_20pxh">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/msg_uraian"
-                style="@style/txtMontserratbold16_2"/>
-            <TextView
-                android:id="@+id/txtUraian_lk"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/msg_proposal_aplika"
-                style="@style/txtMontserratbold20_3"/>
-        </LinearLayout>
-
-        <!-- SKP -->
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginTop="@dimen/_20pxh">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/lbl_skp"
-                style="@style/txtMontserratbold16_2"/>
-            <TextView
-                android:id="@+id/txtSKP_lk"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/membuat_aplikasi_mobile"
-                style="@style/txtMontserratbold20_3"/>
-        </LinearLayout>
-
-        <!-- Tanggal -->
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginTop="@dimen/_20pxh">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/lbl_tanggal"
-                style="@style/txtMontserratbold16_2"/>
-            <TextView
-                android:id="@+id/txtTanggal_lk"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/msg_09_03_2022_09_1"
-                style="@style/txtMontserratbold20_3"/>
-        </LinearLayout>
-
-        <!-- File -->
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginTop="@dimen/_20pxh">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/lbl_file"
-                style="@style/txtMontserratbold16_2"/>
-            <TextView
-                android:id="@+id/txtFile_lk"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/lbl_21"
-                style="@style/txtMontserratbold20_3"/>
-        </LinearLayout>
-
-        <!-- File Categories -->
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginTop="@dimen/_20pxh">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/lbl_file_categories"
-                style="@style/txtMontserratbold16_2"/>
-            <ImageView
-                android:layout_marginTop="@dimen/_5pxh"
-                android:id="@+id/txtFileCategories_lk"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/video"/>
-        </LinearLayout>
-
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="@dimen/_30pxv"
-            android:layout_marginBottom="@dimen/_10pxv"
-            android:gravity="center">
+            android:orientation="horizontal">
 
-            <!-- Button Edit -->
             <LinearLayout
-                android:id="@+id/btn_edit_tabellogkeg"
-                android:layout_marginEnd="@dimen/_10pxh"
-                style="@style/groupStyleteal_400cornerRadius"
-                android:layout_width="wrap_content"
-                android:layout_height="@dimen/_50pxh"
-                android:layout_gravity="center"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
+                android:id="@+id/data_tabelskp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-                <ImageView
-                    android:id="@+id/pentosquare"
+                <!-- Tanggal -->
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/_20pxh"
-                    android:contentDescription="@string/icon_save"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/img_pentosquares" />
+                    android:orientation="vertical">
 
-                <TextView
-                    style="@style/txtMontserratbold20_2"
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/lbl_tanggal"
+                        style="@style/txtMontserratbold18_1"/>
+                    <TextView
+                        android:id="@+id/txtTanggal_lk"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/msg_09_03_2022_09_1"
+                        style="@style/txtMontserratbold16_2"/>
+                </LinearLayout>
+
+                <!-- SKP -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/_15pxh"
-                    android:layout_marginEnd="@dimen/_20pxh"
-                    android:layout_weight="1"
-                    android:ellipsize="end"
-                    android:singleLine="true"
-                    android:text="@string/lbl_edit"
-                    android:layout_width="0dp" />
+                    android:orientation="vertical"
+                    android:layout_marginTop="@dimen/_20pxh">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/lbl_skp"
+                        style="@style/txtMontserratbold18_1"/>
+                    <TextView
+                        android:id="@+id/txtSKP_lk"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/membuat_aplikasi_mobile"
+                        style="@style/txtMontserratbold16_2"/>
+                </LinearLayout>
 
             </LinearLayout>
-        </LinearLayout>
+
+            <LinearLayout
+                android:layout_alignRight="@id/data_tabelskp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="end">
+
+                <!-- Button Detail -->
+                <LinearLayout
+                    android:id="@+id/btn_detail_tabellogkegiatan"
+                    style="@style/groupStylegreen_400cornerRadius"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_45pxh"
+                    android:layout_gravity="top"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/pentosquare"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_12pxh"
+                        android:layout_marginEnd="@dimen/_8pxh"
+                        android:contentDescription="@string/icon_save"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/info" />
+
+                    <TextView
+                        style="@style/txtMontserratbold18_3"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_12pxh"
+                        android:layout_weight="1"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:text="@string/lbl_detail"
+                        android:layout_width="0dp" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </RelativeLayout>
 
     </LinearLayout>
 </LinearLayout>
