@@ -21,6 +21,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.provider.OpenableColumns;
+import android.util.Base64;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -61,6 +62,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+import static com.example.mapen.api.ApiClient.PERMISSION_REQUEST_CAMERA;
 import static com.example.mapen.api.ApiClient.PERMISSION_REQUEST_STORAGE;
 
 public class Presensi extends AppCompatActivity implements View.OnClickListener {
@@ -85,15 +87,27 @@ public class Presensi extends AppCompatActivity implements View.OnClickListener 
     RequestBody userRequest, fotoRequest, riwayatRequest, statusRequest, kerjaRequest, latRequest, longRequest, cek_presensiRequest;
 
     private static final int REQUEST_PICK_PHOTO = ApiClient.REQUEST_PICK_PHOTO;
+    private static final int PERMISSION_REQUEST_CAMERA = ApiClient.PERMISSION_REQUEST_CAMERA;
     private static final int REQUEST_WRITE_PERMISSION = ApiClient.REQUEST_WRITE_PERMISSION;
     private static final int PERMISSION_REQUEST_LOCATION = ApiClient.PERMISSION_REQUEST_LOCATION;
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == PERMISSION_REQUEST_LOCATION) {
+            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                presensiPegawai();
+            } else {
+                Toast.makeText(this, "Location Permission is Required", Toast.LENGTH_SHORT).show();
+            }
+        }
 
-        if (requestCode == REQUEST_WRITE_PERMISSION && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-            presensiPegawai();
+        if (requestCode == PERMISSION_REQUEST_CAMERA) {
+            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                openPhotoPicker();
+            } else {
+                Toast.makeText(this, "Camera Permission is Required", Toast.LENGTH_SHORT).show();
+            }
         }
     }
 
@@ -194,7 +208,7 @@ public class Presensi extends AppCompatActivity implements View.OnClickListener 
 
     private void choosePhoto() {
         if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
-                ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.CAMERA}, PERMISSION_REQUEST_STORAGE);
+                ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.CAMERA}, PERMISSION_REQUEST_CAMERA);
         } else {
             openPhotoPicker();
         }
@@ -215,12 +229,48 @@ public class Presensi extends AppCompatActivity implements View.OnClickListener 
                     fotoBitmap = (Bitmap) data.getExtras().get("data");
                     ivFoto.setImageBitmap(fotoBitmap);
 
-                    fotoUri = getImageUri(getApplicationContext(), fotoBitmap);
-                    fotoFile = new File(getRealPathFromURI(fotoUri));
-                    Log.d("fotoFile", String.valueOf(fotoFile));
+                    try {
+                        Bundle extras = data.getExtras();
+                        Bitmap imageBitmap = (Bitmap) extras.get("data");
+
+                        if (imageBitmap != null) {
+                            ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+
+                            imageBitmap.compress(Bitmap.CompressFormat.JPEG, 1000, byteArrayOutputStream);
+                            String encodeImage = Base64.encodeToString(byteArrayOutputStream.toByteArray(), Base64.DEFAULT);
+
+                            fotoFile = saveBitmap(fotoBitmap);
+                            Log.d("fotoFile", String.valueOf(fotoFile));
+                        }
+                    } catch(Exception e) {
+                        e.printStackTrace();
+                    }
                 }
             }
         }
+    }
+
+    private File saveBitmap(Bitmap fotoBitmap) {
+        String extStorageDirectory = Environment.getExternalStorageDirectory().toString();
+        OutputStream outStream = null;
+
+        File file = new File(extStorageDirectory);
+        if (file.exists()) {
+            file.delete();
+            file = new File(extStorageDirectory);
+        }
+
+        try {
+            outStream = new FileOutputStream(file);
+            fotoBitmap.compress(Bitmap.CompressFormat.PNG, 100, outStream);
+            outStream.flush();
+            outStream.close();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+        return file;
     }
 
     private Uri getImageUri(Context context, Bitmap fotoBitmap) {
@@ -313,9 +363,9 @@ public class Presensi extends AppCompatActivity implements View.OnClickListener 
             sp = getSharedPreferences("user_detail",MODE_PRIVATE);
             user_id = sp.getString("user_id", "");
 
-            filePart = FileUtils.getFile(this, Uri.fromFile(fotoFile));
+//            filePart = FileUtils.getFile(this, Uri.fromFile(fotoFile));
             fotoRequest = RequestBody.create(MediaType.parse("image/*"), fotoFile);
-            fotoPart = MultipartBody.Part.createFormData("photo", fotoFile.getName(), fotoRequest);
+            fotoPart = MultipartBody.Part.createFormData("foto", fotoFile.getName(), fotoRequest);
 
             userRequest = RequestBody.create(MediaType.parse("text/plain"), user_id);
             riwayatRequest = RequestBody.create(MediaType.parse("text/plain"), idriwayat);

@@ -11,10 +11,10 @@ public class ApiClient {
 //    public static final String ip = "http://192.168.100.12/";
 
     // Umum
-//    public static final String ip = "ttp://192.168.43.187/";
+    public static final String ip = "http://192.168.0.112/";
 
     // CoE
-    public static final String ip = "http://192.168.35.128/";
+//    public static final String ip = "http://192.168.35.128/";
 
     private static final String url = ip + "mapen/index.php/";
     public static final String imageUrl = ip + "mapen/assets/images/users/";
@@ -28,6 +28,7 @@ public class ApiClient {
     public static final int REQUEST_PICK_FILE = 3;
     public static final int REQUEST_WRITE_PERMISSION = 786;
     public static final int PERMISSION_REQUEST_STORAGE = 4;
+    public static final int PERMISSION_REQUEST_CAMERA = 101;
     public static final int PERMISSION_REQUEST_LOCATION = 101;
 
     private static Retrofit getRetrofit(){

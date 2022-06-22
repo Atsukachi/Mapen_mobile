@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ScrollView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,6 +23,7 @@ public class LoginActivity extends AppCompatActivity {
     String email_login, password_login, message, email, user_id, role_id, image, keahlian, name, alamat, telephone;
     EditText login_email, login_pass;
     SharedPreferences sp;
+    ScrollView scrollView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +32,9 @@ public class LoginActivity extends AppCompatActivity {
 
         initComponents();
         checkUserExistence();
+
+        scrollView.setVerticalScrollBarEnabled(false);
+        scrollView.setHorizontalScrollBarEnabled(false);
     }
 
     private void initComponents() {
@@ -38,6 +43,8 @@ public class LoginActivity extends AppCompatActivity {
 
         btn_signin = findViewById(R.id.btnSignIn);
         btn_signin.setOnClickListener(view -> processlogin());
+
+        scrollView = findViewById(R.id.sv_login);
     }
 
      void processlogin() {
